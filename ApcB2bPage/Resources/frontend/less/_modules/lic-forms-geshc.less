@@ -1,0 +1,353 @@
+
+.lic--b2b-gesch-banner {
+    height: 200px;
+    position: absolute;
+    width: 100%;
+    top: 115px;
+    right: 0;
+    z-index: 1;
+    background: linear-gradient(0.02turn, #216d75, #d5f1ee);
+    &::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 17%;
+        background: white;
+        left: 0;
+    }
+}
+.gets-team-pash {
+    color: #bfbfbf;
+}
+.lic--b2b-gesch-banner-cont {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding-left: 290px;
+    padding-right: 5px;
+}
+.lic--b2b-gesch-banner-txt {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 35px;
+    padding-left: 40px;
+}
+.lic--b2b-gesch-banner-images {
+    display: flex;
+    max-width: 490px;
+    .lic--indexlicense--svg-div{
+        width: auto;
+        img{
+            width: 41px;
+        }
+        .lic--indexlicense--svg-text{
+            font-size: 13px;
+        }
+    }
+}
+.forms--container.panel.form--success{
+    display: none;
+}
+.lic--b2b-gesch-banner + .page-wrap {
+    .lic--top--white{
+        display: none;
+    }
+    @media screen and (min-width: 768px){
+        section.content-main.container.block-group{
+            margin-top: -100px;
+            position: relative;
+            box-shadow: unset;
+            margin-bottom: 0;
+        }
+        .lic--b2b-gesch-banner-mob{
+            display: none;
+        }
+        .form--23-succes{
+            width: 50%;
+            & ~ .form--container-24{
+                .forms--container.panel{
+                    box-shadow: unset;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.lic--form-gesh-form-cont {
+    display: flex;
+    .forms--container{
+        width: 50%;
+        border: 0;
+        box-shadow: 0px 0px 15px 0px #eae8e8;
+        border-radius: 0;
+        .panel--body{
+            padding: 30px;
+            .forms--inner-form.panel--body {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                div{
+                    width: 100%;
+                }
+                div:nth-child(1),
+                div:nth-child(2),
+                div:nth-child(6){
+                    width: 45%;
+                }
+                .textarea textarea{
+                    min-height: 100px;
+                }
+                .forms--required {
+                    text-align: right;
+                    font-size: 10px;
+                    margin-bottom: 25px;
+                    &:hover{
+                        color: #66b0b8;
+                    }
+                }
+                .plz {
+                    margin-right: 10%;
+                    width: 20%;
+                }
+                .input--checkbox-div input{
+                    width: 21px;
+                }
+                .btn{
+                    float: none;
+                    padding: 2px 25px;
+                    border-color: #df2d3e;
+                }
+            }
+        }
+    }
+    .lic--form-gesh-form-r {
+        width: 50%;
+        padding: 0 20px 0 60px;
+        .lic--form-gesh-form-r-img {
+            position: relative;
+            top: -50px;
+            z-index: 9;
+            height: auto;
+            margin-top: -20px;
+            width: 100%;
+        }
+        .lic--form-gesh-form-r-txt1 {
+            font-weight: 700;
+            font-size: 35px;
+        }
+        .lic--form-gesh-form-r-txt2 {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+        .lic--form-gesh-form-r-txt3 {
+            margin: 55px 0;
+        }
+    }
+    .panel--title{
+        display: none;
+    }
+}
+.form--24-contents{
+    .lic--index-gesch-btn{
+        display: none;
+    }
+    .lic--index-form-gesch-content-txt{
+        display: block;
+        font-size: 13px;
+        color: white;
+        padding-left: 5px;
+        margin-top: -15px;
+    }
+    .lic-f24-em2 {
+        margin-top: 85px;
+    }
+    .lic-f24-ansprechpersone {
+        max-width: 875px;
+        margin: 0 auto;
+    }
+    .lic-f24-em3 {
+        .emotion--element{
+            margin-top: -50px;
+        }        
+    }
+}
+div.gets-team-email-cont {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 13px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .lic--b2b-gesch-banner-cont{
+        padding-left: 260px;
+    }
+    .lic--b2b-gesch-banner-images .lic--indexlicense--svg-div {
+        img {
+            width: 35px;
+        }
+        .lic--indexlicense--svg-text {
+            font-size: 12px;
+        }
+    }
+    .lic--b2b-gesch-banner-txt{
+        font-size: 22px;
+        padding-left: 10px;
+    }
+    .lic--b2b-gesch-banner + .page-wrap{
+        .content-main--inner{
+            padding: 0;
+        }
+        .lic--form-gesh-form-cont{
+            .panel--body{
+                padding: 0;
+            }
+            .forms--container .panel--body {
+                padding: 20px 10px;
+            }
+        }
+    }
+    .lic--form-gesh-form-cont .lic--form-gesh-form-r {
+        padding: 0 10px 0 20px;
+    }
+    .lic-f24-ansprechpersone {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 767px){
+    .lic--b2b-gesch-banner{
+        display: none;
+    }
+    .lic--index-form-gesch-content-txt {
+        position: relative;
+        left: 45%;
+        width: 55%;
+    }
+    .lic--b2b-gesch-banner-mob {
+        position: absolute;
+        left: -10px;
+        top: 0;
+        background: linear-gradient(1turn, #3b8890, #C7E0DD);
+        width: 38%;
+        height: 700px;
+        .lic--b2b-gesch-banner-cont {
+            display: flex;
+            flex-direction: column-reverse;
+            padding: 140px 0 15px 0;
+            justify-content: space-around;
+        }
+        .lic--b2b-gesch-banner-images {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: inherit;
+        }
+        .lic--b2b-gesch-banner-txt {
+            font-size: 18px;
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+    .lic--form-gesh-form-cont {
+        flex-direction: column-reverse;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .form--container-24{
+        position: relative;
+    }
+    .lic--form-gesh-form-cont .lic--form-gesh-form-r {
+        width: 280px;
+        padding: 0;
+        height: 700px;
+        position: absolute;
+        left: 38%;
+        top: 0;
+        padding-left: 25px;
+        .lic--form-gesh-form-r-img{
+            position: relative;
+            top: 20px;
+            z-index: 9;
+            height: 100px;
+            margin-top: 0;
+            width: auto;
+            left: -70px;
+        }
+    }
+    .lic--form-gesh-form-cont .forms--container{
+        width: 100%;
+        margin-top: 750px;
+    }
+    .lic--form-gesh-form-cont .lic--form-gesh-form-r .lic--form-gesh-form-r-txt1 {
+        font-size: 22px;
+        line-height: 24px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .form--23-succes{
+        padding: 0 20px;
+        padding-bottom: 30px;
+        & ~ .form--container-24{
+            .forms--container.panel{
+                box-shadow: unset;
+                display: block;
+                margin-top: 700px;
+            }
+        }
+    }
+    .lic--form-gesh-form-cont .forms--container .panel--body {
+        padding: 20px 15px;
+    }
+}
+@media screen and (max-width: 479px){
+    .lic--b2b-gesch-banner-mob{
+        width: 42%;
+        .lic--b2b-gesch-banner-txt{
+            font-size: 13px;
+        }
+    }
+    .lic--form-gesh-form-cont .lic--form-gesh-form-r{
+        width: 58%;
+        left: 42%;
+        padding-left: 0;
+        .lic--form-gesh-form-r-txt1 {
+            font-size: 16px;
+        }
+        .lic--form-gesh-form-r-txt2 {
+            font-size: 14px;
+        }
+        .lic--form-gesh-form-r-txt3,
+        .lic--form-gesh-form-r-txt4 {
+            font-size: 13px;
+        }
+    }
+    .form--24-contents .lic-f24-ansprechpersone {
+        max-width: 330px;
+    }
+    .lic--index-form-gesch-content-txt {
+        position: relative;
+        left: 58%;
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
