@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label>Cookie Consent Style</label>
+    <label lang="de">Cookie Consent Style</label>
+
+    <version>1.0.0</version>
+    <author>Apricode</author>
+    <copyright>(c) 2020</copyright>
+    <link>apricode.co</link>   
+    <compatibility minVersion="5.3.0" />  
+</plugin>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <elements>
+        <element type="select">
+            <name>afterOrderAction</name>
+            <label lang="de">Aktion nach Bestellabschluss</label>
+            <label lang="en">Action on Checkout finish</label>
+            <value>0</value>
+            <description lang="de">Es wird empfohlen, auf die bereitgestellten Cronjobs zurückzugreifen.</description>
+            <description lang="en">We do recommend to use the cronjobs instead.</description>
+            <store>
+                <option>
+                    <value>0</value>
+                    <label lang="de">keine</label>
+                    <label lang="en">none</label>
+                </option>
+                <option>
+                    <value>1</value>
+                    <label lang="de">Rechnung generieren</label>
+                    <label lang="en">Generate Invoice</label>
+                </option>
+                <option>
+                    <value>2</value>
+                    <label lang="de">Rechnung generieren <![CDATA[&]]> versenden</label>
+                    <label lang="en">Generate <![CDATA[&]]> send Invoice</label>
+                </option>
+            </store>
+        </element>
+
+        <element type="boolean">
+            <name>showInOrderHistory</name>
+            <label lang="de">Rechnung in Bestellübersicht bereitstellen</label>
+            <label lang="en">Display invoice at customer's oder history</label>
+            <value>false</value>
+        </element>
+
+        <element type="date" required="true">
+            <name>cronSendStartDate</name>
+            <label lang="de">Cron-Rechnungsversand ab</label>
+            <label lang="en">Send invoices for orders after</label>
+            <value>01.01.2030 00:00:00</value>
+            <description lang="de">Für ältere Bestellungen liegen leider keine Informationen vor, ob deren Rechnungen bereits zugestellt wurden. Mittels dieser Konfiguration kann festgelegt werden, ab welchem Zeitpunkt der Versand per Cron zu erfolgen hat.</description>
+            <description lang="en">We do not have any information if older invoices were already sent. Please define a start date and the cron will only send invoices for orders after the defined date.</description>
+        </element>
+
+        <element type="number">
+            <name>cronGenerateInvoices</name>
+            <label lang="de">Anzahl zu generierender Rechnungen je Cronjob</label>
+            <label lang="en">Quantity of invoices generated each cronjob</label>
+            <value>10</value>
+            <description lang="de">0 = keine Begrenzung</description>
+            <description lang="en">0 = no limitation</description>
+        </element>
+
+        <element type="number">
+            <name>cronSendInvoices</name>
+            <label lang="de">Anzahl zu verschickender Rechnungen je Cronjob</label>
+            <label lang="en">Quantity of invoices send each cronjob</label>
+            <value>10</value>
+            <description lang="de">0 = keine Begrenzung</description>
+            <description lang="en">0 = no limitation</description>
+        </element>
+    </elements>
+
+</config>

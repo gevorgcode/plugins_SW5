@@ -1,0 +1,287 @@
+.lic--indexunsere-headline{
+    max-width: 875px;
+    margin: 0 auto;
+}
+.lic--indexunsere-banner{
+    margin: 0 auto;
+    height: 415px;
+}
+.indexunsere--container {
+    display: flex;
+    max-width: 875px;
+    margin: 0 auto;
+    height: 415px;
+    padding-top: 25px;
+}
+.lic--indexunsere-headline {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.lic--indexunsere-l {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.lic--indexunsere-r {
+    width: 60%;
+    display: flex;
+    position: relative;
+}
+.indexunsere--cont-name {
+    text-align: left;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 30px;
+    color: #04212f;
+}
+.indexunsere--cont-price-pse{
+    padding-left: 10px;
+    position: relative;
+    text-align: left;
+}
+.indexunsere--cont-price-pse::after {
+    content: '';
+    width: 65px;
+    height: 2px;
+    position: absolute;
+    background: #df2d3e;
+    transform: rotate(-10deg);
+    left: 5px;
+    bottom: 9px;
+}
+.indexunsere--cont-price {
+    background: #df2d3e;
+    width: fit-content;
+    padding: 10px 20px;
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+.indexunsere--cont-btn.is--secondary.btn{
+    border: 2px solid #df2d3e;
+    color: #04212f;
+    width: fit-content;
+    text-align: center;
+    margin-left: 1px;
+    padding: 2px 25px;
+    &:hover{
+        color: white;
+    }
+}
+.indexunsere-slider-prs {
+    margin: 25px 0 35px 0;
+}
+.lic--indexunsere-banner{
+    .image-slider--dots {
+        text-align: left;
+        left: 140px;
+        div.dot--link{
+            background: #f3eeee;
+        }
+    }
+}
+.lic--indexunsere-bg {
+    position: absolute;
+    width: 525px;
+    height: 200px;
+    background-size: cover;
+    background: linear-gradient(.25turn, #3b8890, #c7e0de);
+    z-index: -1;
+    top: 107px;
+    right: 143px;
+}
+.lic--indexunsere-download-cont {
+    position: absolute;
+    width: auto;
+    height: fit-content;
+    display: flex;
+    right: 0;
+    img{
+        width: 85px;
+        margin-right: 25px;
+    }
+    a{
+        font-size: 15px;
+        text-align: left;
+        color: black;
+        letter-spacing: 1px;
+        display: flex;
+    }
+}
+.indexunsere--slider-img{
+    padding: 15px 0px 0px 50px;
+}
+.lic--indexunsere-banner{
+    .image-slider--container .arrow.is--left:before, 
+    .image-slider--container .arrow.is--left::before,
+    .image-slider--container .arrow.is--right:before{
+        display: none;
+    }
+    .arrow{
+        border: none;
+        background: none;
+        &.is--left{
+            &::after{
+                display: block;
+                content: ' ';
+                background-image: url(../../svg/arrow-left-cust.svg);
+                background-size: 70px 70px;
+                height: 70px;
+                width: 70px;
+                opacity: 0.1;
+                left: -17px;
+                position: relative;
+            }
+        }
+        &.is--right::after{
+                display: block;
+                content: ' ';
+                background-image: url(../../svg/arrow-right-cust.svg);
+                background-size: 70px 70px;
+                height: 70px;
+                width: 70px;
+                opacity: 0.1;
+                position: relative;
+                right: 23px;
+        }
+    }
+}
+.lic--indexunsere-banner{
+    .banner-slider--banner.container{
+        background: unset;
+        min-height: 464px;
+    }
+}
+@media screen and (min-width: 768px){
+    .indexunsere--slider-img{
+        max-height: 390px;
+    }
+}
+@media screen and (max-width: 1259px){
+    .lic--indexunsere-bg {
+        right: auto;
+        left: 41%;
+        width: 490px;
+    }
+    .lic--indexunsere-r {
+        width: 58%;
+    }
+    .indexunsere--container,
+    .lic--indexunsere-headline{
+        max-width: 875px;
+    }
+    .lic--indexunsere-download-cont{
+        right: 30px;
+    }
+}
+@media screen and (max-width: 1023px){
+    .indexunsere--container,
+    .lic--indexunsere-headline{
+        max-width: 600px;        
+    }
+    .lic--indexunsere-bg {
+        right: auto;
+        left: 46%;
+        width: 335px;
+    }
+    .indexunsere--cont-name{
+        font-size: 20px;
+    }
+    .lic--indexunsere-download-cont{
+        display: none;
+    }
+    .indexunsere--slider-img {
+        padding: 40px 0px 30px 85px;
+    }    
+}
+@media screen and (max-width: 767px){
+    .lic--indexunsere-banner .banner-slider--banner.container{
+        max-width: 100%;
+        max-height: unset;
+        min-height: auto;
+    }
+    .indexunsere--container {
+        padding: 0;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .lic--indexunsere-headline {
+        max-width: 420px;
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 20px;
+    }
+    .lic--indexunsere-l {
+        width: 100%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        height: 210px;
+    }
+    .indexunsere--cont-name {
+        font-size: 17px;
+        margin: 0;
+    }
+    .indexunsere--cont-btn.is--secondary.btn {
+        width: 99%;
+    }
+    .lic--indexunsere-r {
+        width: 100%;
+    }
+    .lic--indexunsere-rimg{
+        margin: 0 auto;
+    }
+    .indexunsere--slider-img {
+        padding: 0;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .indexunsere-slider-prs {
+        margin: 0;
+    }
+    .lic--indexunsere-bg {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        height: 90px;
+        top: 65px;
+        max-width: 55%;
+    }
+    .lic--indexunsere-banner .arrow {
+        top: 125px;
+    }
+    .lic--indexunsere-banner .arrow.is--left::after {
+        background-size: 35px 35px;
+        height: 35px;
+        width: 35px;
+        left: 38px;
+    }
+    .lic--indexunsere-banner .arrow.is--right::after {
+        background-size: 35px 35px;
+        height: 35px;
+        width: 35px;
+        right: 43px;
+    }
+}
+@media screen and (max-width: 479px){
+    .lic--indexunsere-headline,
+    .indexunsere--container{
+        max-width: 330px;
+    }
+    .lic--indexunsere-banner .arrow.is--right::after{
+        right: 5px;
+    }
+    .lic--indexunsere-banner .arrow.is--left::after{
+        left: 0;
+    }
+    .lic--indexunsere-bg{
+        max-width: 70%;
+    }
+}

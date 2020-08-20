@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="gen_send_invoices.subscriber.template_registration" class="genSendInvoices\Subscriber\TemplateRegistration">
+            <argument>%gen_send_invoices.plugin_dir%</argument>
+            <argument type="service" id="template"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service class="genSendInvoices\Services\InvoiceService" id="gen_send_invoices.services.invoice_service">
+            <argument type="string">%shopware.app.documentsdir%</argument>
+            <argument id="gen_send_invoices.services.order_data" type="service"/>
+            <argument type="service" id="models"/>
+        </service>
+
+        <service class="genSendInvoices\Services\OrderData" id="gen_send_invoices.services.order_data">
+            <argument type="service" id="models"/>
+            <argument type="string">%shopware.app.documentsdir%</argument>
+        </service>
+
+        <service id="gen_send_invoices.commands.send_invoice" class="genSendInvoices\Commands\SendInvoice">
+            <tag name="console.command" />
+            <argument type="service" id="gen_send_invoices.services.invoice_service"/>
+            <argument id="gen_send_invoices.services.order_data" type="service"/>
+        </service>
+
+        <service id="gen_send_invoices.commands.generate_invoices" class="genSendInvoices\Commands\GenerateInvoices">
+            <tag name="console.command" />
+            <argument type="service" id="gen_send_invoices.services.invoice_service"/>
+            <argument id="gen_send_invoices.services.order_data" type="service"/>
+            <argument>%gen_send_invoices.plugin_name%</argument>
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+        </service>
+
+        <service id="gen_send_invoices.commands.send_invoices" class="genSendInvoices\Commands\SendInvoices">
+            <tag name="console.command" />
+            <argument type="service" id="gen_send_invoices.services.invoice_service"/>
+            <argument id="gen_send_invoices.services.order_data" type="service"/>
+            <argument>%gen_send_invoices.plugin_name%</argument>
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+        </service>
+
+        <service id="gen_send_invoices.subscriber.frontend" class="genSendInvoices\Subscriber\Frontend">
+            <argument type="service" id="gen_send_invoices.services.invoice_service"/>
+            <argument id="gen_send_invoices.services.order_data" type="service"/>
+            <argument>%gen_send_invoices.plugin_name%</argument>
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="gen_send_invoices.subscriber.cron" class="genSendInvoices\Subscriber\Cron">
+            <argument type="service" id="gen_send_invoices.services.invoice_service"/>
+            <argument id="gen_send_invoices.services.order_data" type="service"/>
+            <argument>%gen_send_invoices.plugin_name%</argument>
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+    </services>
+</container>

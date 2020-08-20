@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+       
+       <element required="false" type="boolean" scope="shop">
+            <name>showdots</name>
+            <label lang="de">Display dot navigation?</label>
+            <label lang="en">Display dot navigation?</label>
+        </element>
+        <element required="false" type="boolean" scope="shop">
+            <name>displayarrows</name>
+            <label lang="de">Display arrows?</label>
+            <label lang="en">Display arrows?</label>
+        </element>
+       <element required="false" type="boolean" scope="shop">
+            <name>autoslide</name>
+            <label lang="de">Rotate automatically?</label>
+            <label lang="en">Rotate automatically?</label>
+        </element>
+       <element required="true" type="number">
+            <name>rotspeed</name>
+            <label lang="de">Rotation speed</label>
+            <label lang="en">Rotation speed</label>
+            <value>5000</value>
+            <options>
+                <minValue>1000</minValue>
+            </options>
+        </element>
+    </elements>
+</config>

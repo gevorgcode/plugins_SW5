@@ -1,0 +1,47 @@
+.listing--paging.panel--paging.gen-listing--paging{
+    padding-left: 20px;
+    .paging--link{
+        background: #203E45;
+        color: white;
+        &:hover{
+            background: red;
+            border: 1px solid #dadae5;
+        }
+    }
+    .paging--link.is--currentpage{
+        font-weight: bold;
+        &:hover{
+            background: #203E45;
+            border: none;
+        }
+    }
+    .paging--display{
+        color: #666;
+        font-size: 16px;
+    }
+}
+// 1023px
+@media screen and (max-width: 63.9375em) {
+    .gen-listing--paging-desctop{
+        display: none;
+    }
+}
+// 1024px
+@media screen and (min-width: 64em) {
+    .gen-listing--paging-mobile{
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .section-mobile.is--lang-fr-FR{
+//        h4.h4--1{
+//            margin-top: 10px;
+//        }
+        .banner-content1{
+            h3{
+                font-size: 34px;
+                line-height: 40px;
+            }
+        }
+    }
+}

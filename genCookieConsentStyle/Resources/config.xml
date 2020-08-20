@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="button" scope="shop">
+            <name>sectionConsent</name>
+            <label lang="de">Konfiguration: Consent</label>
+            <label lang="en">Configuration: Consent</label>
+            <options>
+                <position>10</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>consentBgColor</name>
+            <label lang="de">Hintergrundfarbe</label>
+            <label lang="en">Background color</label>
+            <value>#ffffff</value>
+            <options>
+                <position>11</position>
+            </options>
+        </element>
+        <element type="number" scope="shop">
+            <name>consentBgColorTransparence</name>
+            <label lang="de">Transparenz (0 = komplett Transparent)</label>
+            <label lang="en">Transparence (0 = completely transparent)</label>
+            <value>80</value>
+            <options>
+                <position>12</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>consentColor</name>
+            <label lang="de">Textfarbe</label>
+            <label lang="en">Text color</label>
+            <value>#000000</value>
+            <options>
+                <position>12</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>consentBorderTop</name>
+            <label lang="de">Rahmenfarbe oben</label>
+            <label lang="en">Border color top</label>
+            <value>#cccccc</value>
+            <options>
+                <position>13</position>
+            </options>
+        </element>
+<!-- ACCEPT BTN //-->
+        <element type="button" scope="shop">
+            <name>sectionAccept</name>
+            <label lang="de">Konfiguration: Button "Alle akzeptieren"</label>
+            <label lang="en">Configuration: Button "Accept all"</label>
+            <options>
+                <position>30</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>acceptBtnBgColor</name>
+            <label lang="de">Hintergrundfarbe</label>
+            <label lang="en">Background color</label>
+            <value>#5aa02c</value>
+            <options>
+                <position>31</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>acceptBtnBorderColor</name>
+            <label lang="de">Rahmenfarbe</label>
+            <label lang="en">Border color</label>
+            <value>#5aa02c</value>
+            <options>
+                <position>32</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>acceptBtnColor</name>
+            <label lang="de">Textfarbe</label>
+            <label lang="en">Text color</label>
+            <value>#ffffff</value>
+            <options>
+                <position>33</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>acceptBtnBgColorHover</name>
+            <label lang="de">Hintergrundfarbe Hover</label>
+            <label lang="en">Background color Hover</label>
+            <value>#3e6f1f</value>
+            <options>
+                <position>34</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>acceptBtnBorderColorHover</name>
+            <label lang="de">Rahmenfarbe Hover</label>
+            <label lang="en">Border color Hover</label>
+            <value>#3e6f1f</value>
+            <options>
+                <position>35</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>acceptBtnColorHover</name>
+            <label lang="de">Textfarbe Hover</label>
+            <label lang="en">Text color Hover</label>
+            <value>#ffffff</value>
+            <options>
+                <position>36</position>
+            </options>
+        </element>
+<!-- DECLINE BTN //-->
+        <element type="button" scope="shop">
+            <name>sectionDecline</name>
+            <label lang="de">Konfiguration: Button "Ablehnen"</label>
+            <label lang="en">Configuration: Button "Decline"</label>
+            <options>
+                <position>50</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>declineBtnBgColor</name>
+            <label lang="de">Hintergrundfarbe</label>
+            <label lang="en">Background color</label>
+            <value>#ffffff</value>
+            <options>
+                <position>51</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>declineBtnBorderColor</name>
+            <label lang="de">Rahmenfarbe</label>
+            <label lang="en">Border color</label>
+            <value>#000000</value>
+            <options>
+                <position>52</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>declineBtnColor</name>
+            <label lang="de">Textfarbe</label>
+            <label lang="en">Text color</label>
+            <value>#000000</value>
+            <options>
+                <position>53</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>declineBtnBgColorHover</name>
+            <label lang="de">Hintergrundfarbe Hover</label>
+            <label lang="en">Background color Hover</label>
+            <value>#000000</value>
+            <options>
+                <position>54</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>declineBtnBorderColorHover</name>
+            <label lang="de">Rahmenfarbe Hover</label>
+            <label lang="en">Border color Hover</label>
+            <value>#000000</value>
+            <options>
+                <position>55</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>declineBtnColorHover</name>
+            <label lang="de">Textfarbe Hover</label>
+            <label lang="en">Text color Hover</label>
+            <value>#ffffff</value>
+            <options>
+                <position>56</position>
+            </options>
+        </element>
+<!-- CONFIGURE BTN //-->
+        <element type="button" scope="shop">
+            <name>sectionConfigure</name>
+            <label lang="de">Konfiguration: Button "Konfigurieren"</label>
+            <label lang="en">Configuration: Button "Configure"</label>
+            <options>
+                <position>70</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>configureBtnBgColor</name>
+            <label lang="de">Hintergrundfarbe</label>
+            <label lang="en">Background color</label>
+            <value>#ffffff</value>
+            <options>
+                <position>71</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>configureBtnBorderColor</name>
+            <label lang="de">Rahmenfarbe</label>
+            <label lang="en">Border color</label>
+            <value>#000000</value>
+            <options>
+                <position>72</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>configureBtnColor</name>
+            <label lang="de">Textfarbe</label>
+            <label lang="en">Text color</label>
+            <value>#000000</value>
+            <options>
+                <position>73</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>configureBtnBgColorHover</name>
+            <label lang="de">Hintergrundfarbe Hover</label>
+            <label lang="en">Background color Hover</label>
+            <value>#000000</value>
+            <options>
+                <position>34</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>configureBtnBorderColorHover</name>
+            <label lang="de">Rahmenfarbe Hover</label>
+            <label lang="en">Border color Hover</label>
+            <value>#000000</value>
+            <options>
+                <position>75</position>
+            </options>
+        </element>
+        <element type="color" scope="shop">
+            <name>configureBtnColorHover</name>
+            <label lang="de">Textfarbe Hover</label>
+            <label lang="en">Text color Hover</label>
+            <value>#ffffff</value>
+            <options>
+                <position>76</position>
+            </options>
+        </element>
+    </elements>
+</config>

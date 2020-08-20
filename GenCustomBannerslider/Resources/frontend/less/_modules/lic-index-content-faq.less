@@ -1,0 +1,131 @@
+.lic--index-faq--container {
+    max-width: 875px;
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+}
+.emotion--text-collapse-titel {    
+    width: max-content;
+    max-width: 250px;
+    &:hover{
+        cursor: pointer;
+    }
+    p{
+        font-size: 13px;
+        position: relative;
+    }
+}
+.emotion--text-collapse-content {
+    position: absolute;
+    width: 550px;
+    right: 0;
+    top: 100px;
+    display: none;
+    p{
+        line-height: 20px;
+    }
+}
+.emotion--text-collapse-content p.content--title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.lic--index-faq-title {
+    font-size: 35px;
+    font-weight: bold;
+    height: 100px;
+}
+.is---active .emotion--text-collapse-titel p{
+    text-decoration: line-through #df2d3e;
+}
+@media screen and (max-width: 1023px){
+    .lic--index-faq--container{
+        padding: 0 10px;
+    }
+    .emotion--text-collapse-content{
+        right: 10px;
+        width: 490px;
+    }
+}
+@media screen and (max-width: 767px){
+    .content--title{
+        display: none;
+    }
+    .emotion--text-collapse-content {
+        right: auto;
+        width: auto;
+        position: initial;
+        top: auto;
+    }
+    .lic--index-faq--container{
+        overflow: auto;
+        padding: 0 30px;
+        height: 100%;
+        max-width: 480px;
+    }
+    .emotion--text-collapse-titel{
+        max-width: 100%;
+    }
+    .emotion--text-collapse-titel p {
+        font-size: 16px;
+        font-weight: 600;
+        &::before{
+            content: '';
+            width: 12px;
+            height: 2px;
+            border-bottom: 2px solid #df2d3e;
+            position: absolute;
+            left: -20px;
+            top: 9px;
+        }
+    }
+    .is---active .emotion--text-collapse-titel p{
+        font-weight: 800;
+        &::before{
+            display: none;
+        }
+    }
+    .lic--index-faq-title {
+        font-size: 30px;
+        font-weight: bold;
+        height: 60px;
+    }
+    .emotion--text-collapse-container{
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 479px){
+    .lic--index-faq--container{
+        max-width: 330px;
+        padding: 0;
+    }
+    .emotion--text-collapse-content p {
+        line-height: 16px;
+        font-size: 12px;
+    }
+    .emotion--text-collapse-container {
+        padding: 0 20px;
+    }
+    .emotion--text-collapse-titel p::before{
+        width: 10px;
+        left: -15px;
+    }
+    .emotion--text-collapse-titel p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+////////////
+.lic--fac--payment-logo{
+    margin-bottom: 25px;
+    margin-top: -10px;
+    padding: 0 !important;
+    .footer--payment-logo{
+        padding: 0;
+        border: 1px solid #4c8c93;
+        margin-right: 10px;
+        border-radius: 4px;
+        height: 25px;
+    }
+}

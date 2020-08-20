@@ -1,0 +1,152 @@
+.page-wrap--cookie-permission {
+  .unitize-padding(20,20,40,20) !important;
+  background-color: @genCookieConsentStyle_consentBgColor;
+  color: @genCookieConsentStyle_consentColor;
+  border-top-color: @genCookieConsentStyle_consentBorderTop;
+
+  .cookie-permission--content,
+  .cookie-permission--button {
+    width: 100% !important;
+    float: none !important;
+    position: static !important;
+    top: 0 !important;
+    overflow: hidden;
+  }
+
+  .cookie-permission--content {
+    .unitize(line-height,24);
+    .unitize-padding(12,0,0,0) !important;
+    text-align: left;
+  }
+
+  a {
+    color: #fff;
+    box-sizing: border-box;
+
+    &.cookie-permission--privacy-link {
+      text-decoration: underline;
+    }
+
+    &.btn {
+      .unitize-margin(10,0,10,0);
+      background: #455560;
+      float: none;
+      display: block;
+      transition: all 0.3s;
+      height: 34px;
+      line-height: 28px;
+      border-radius: 20px;    
+    }
+
+    &.cookie-permission--decline-button {
+      background-color: @genCookieConsentStyle_declineBtnBgColor;
+      border:1px solid @genCookieConsentStyle_declineBtnBorderColor;
+      color: @genCookieConsentStyle_declineBtnColor;
+
+      &:hover {
+        background-color: @genCookieConsentStyle_declineBtnBgColorHover;
+        border:1px solid @genCookieConsentStyle_declineBtnBorderColorHover;
+        color: @genCookieConsentStyle_declineBtnColorHover;
+      }
+    }
+
+    &.cookie-permission--configure-button {
+      background-color: @genCookieConsentStyle_configureBtnBgColor;
+      border:1px solid @genCookieConsentStyle_configureBtnBorderColor;
+      color: @genCookieConsentStyle_configureBtnColor;
+
+      &:hover {
+        background-color: @genCookieConsentStyle_configureBtnBgColorHover;
+        border:1px solid @genCookieConsentStyle_configureBtnBorderColorHover;
+        color: @genCookieConsentStyle_configureBtnColorHover;
+      }
+    }
+
+    &.cookie-permission--accept-button {
+      background-color: @genCookieConsentStyle_acceptBtnBgColor;
+      border:2px solid @genCookieConsentStyle_acceptBtnBorderColor;
+      color: @genCookieConsentStyle_acceptBtnColor;
+      width: 100% !important;
+
+      &:hover {
+        background-color: @genCookieConsentStyle_acceptBtnBgColorHover;
+        border:1px solid @genCookieConsentStyle_acceptBtnBorderColorHover;
+        color: @genCookieConsentStyle_acceptBtnColorHover;
+      }
+    }
+  }
+ z-index: 9000000;
+}
+
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+
+  .page-wrap--cookie-permission {
+    .unitize-padding(20,40,40,40) !important;
+
+    .cookie-permission--button {
+      .unitize(margin-top,20) !important;
+    }
+  }
+}
+.page-wrap--cookie-permission {
+    position: fixed;
+    width: 100%;
+    height: 100%;    
+}
+.cookie-permission--container.cookie-mode--1 {
+    width: 600px;
+    max-width: 90%;
+    height: fit-content;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    padding-bottom: 0;
+}
+.cookie-permission--content.cookie-permission--extra-button{
+    p{
+        font-size: 20px;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    a.cookie-permission--privacy-link{
+        color: #66b0b8;
+    }
+}
+.cookie-permission--button.cookie-permission--extra-button {
+    display: flex;
+    flex-wrap: wrap;
+    .cookie-permission--accept-button{
+        order: 1;
+        margin-right: 0 !important;
+    }
+    .cookie-permission--decline-button{
+//        order: 2;
+//        width: 49%;
+//        margin-right: 2%;
+        display: none;
+    }
+    .cookie-permission--configure-button{
+        order: 3;
+        width: 100%;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+}
+@media screen and (max-width: 479px){
+    .cookie-permission--button.cookie-permission--extra-button .cookie-permission--decline-button {
+        width: 100%;
+        margin: 0 !important;
+    }
+    .cookie-permission--button.cookie-permission--extra-button .cookie-permission--configure-button {
+        width: 100%;
+    }
+}
+
