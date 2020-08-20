@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <parameters>
+        <parameter key="apc_ic_loading.view_dir">%apc_ic_loading.plugin_dir%/Resources/views</parameter>
+        <parameter key="apc_ic_loading.public.less_dir">%apc_ic_loading.view_dir%/_public/less</parameter>
+        <parameter key="apc_ic_loading.public.js_dir">%apc_ic_loading.view_dir%/_public/js</parameter>
+        <parameter key="apc_ic_loading.public.image.spinners">%apc_ic_loading.view_dir%/_public/img/spinners</parameter>
+    </parameters>
+    <services>
+        <!-- Subscriber -->
+        <service id="apc_ic_loading.subscriber.template" class="ApcIcLoading\Subscriber\Template">
+            <argument type="string">%apc_ic_loading.view_dir%</argument>
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="apc_ic_loading.subscriber.frontend" class="ApcIcLoading\Subscriber\Frontend">
+            <argument type="service" id="apc_ic_loading.components.config" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="apc_ic_loading.subscriber.assets" class="ApcIcLoading\Subscriber\Assets">
+            <argument type="string">%apc_ic_loading.public.less_dir%</argument>
+            <argument type="string">%apc_ic_loading.public.js_dir%</argument>
+            <argument type="service" id="apc_ic_loading.components.config" />
+            <argument type="service" id="apc_ic_loading.components.spinner_provider" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="apc_ic_loading.subscriber.plugin_config_extend" class="ApcIcLoading\Subscriber\PluginConfigExtend">
+            <argument type="service" id="apc_ic_loading.services.base64_encoder" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="apc_ic_loading.subscriber.plugin_manager_extend" class="ApcIcLoading\Subscriber\PluginManagerExtend">
+            <argument type="string">%apc_ic_loading.view_dir%</argument>
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <!-- Services -->
+        <service id="apc_ic_loading.services.base64_decoder" class="ApcIcLoading\Services\Base64Decoder" />
+
+        <service id="apc_ic_loading.services.base64_encoder" class="ApcIcLoading\Services\Base64Encoder">
+            <argument type="service" id="shopware_media.media_service" />
+        </service>
+
+        <!-- Components -->
+        <service id="apc_ic_loading.components.config" class="ApcIcLoading\Components\Config">
+            <argument type="service" id="shopware.plugin.cached_config_reader" />
+            <argument type="string">%apc_ic_loading.plugin_name%</argument>
+        </service>
+
+        <service id="apc_ic_loading.components.spinner_provider" class="ApcIcLoading\Components\SpinnerProvider">
+            <argument type="string">%apc_ic_loading.public.image.spinners%</argument>
+            <argument type="string">apcIcLoadingPreDefinedIcons</argument>
+            <argument type="service" id="cache" />
+            <argument type="service" id="apc_ic_loading.services.customizer_spinner" />
+        </service>
+
+        <service id="apc_ic_loading.services.customizer_spinner" class="ApcIcLoading\Services\CustomizerSpinner">
+            <argument type="service" id="apc_ic_loading.components.config" />
+            <argument type="service" id="apc_ic_loading.services.base64_encoder" />
+        </service>
+    </services>
+</container>

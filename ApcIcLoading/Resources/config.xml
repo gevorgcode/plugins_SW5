@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd"
+>
+    <elements>
+        <!-- predefined spinner -->
+        <element type="boolean" scope="shop">
+            <name>apcIcLoadingUsePreDefinedIcons</name>
+            <label>Use predefined loading icons?</label>
+            <label lang="de">Vordefinierte Ladesymbole verwenden?</label>
+            <value>true</value>
+            <description>If no, then the own symbol is used.</description>
+            <description lang="de">Wenn nein, dann wird das eigene Symbol verwendet.</description>
+        </element>
+
+        <element type="select" scope="shop">
+            <name>apcIcLoadingIconSets</name>
+            <label>Select loading icon</label>
+            <label lang="de">Ladesymbol auswählen</label>
+            <value>audio</value>
+            <description>To use them you need to set the 'Predefined load icons?' field to yes.</description>
+            <description lang="de">Um sie zu benutzen muss du das Feld 'Vordefinierte Ladesymbole verwerden?' auf ja setzen.</description>
+            <store>
+                <option>
+                    <value>audio</value>
+                    <label>Audio</label>
+                    <label lang="de">Audio</label>
+                </option>
+                <option>
+                    <value>ball-triangle</value>
+                    <label>Ball triangle</label>
+                    <label lang="de">Ball Dreieck</label>
+                </option>
+                <option>
+                    <value>bars</value>
+                    <label>Bars</label>
+                    <label lang="de">Riegel</label>
+                </option>
+                <option>
+                    <value>circles</value>
+                    <label>Circles</label>
+                    <label lang="de">Kreise</label>
+                </option>
+                <option>
+                    <value>grid</value>
+                    <label>Grid</label>
+                    <label lang="de">Gitter</label>
+                </option>
+                <option>
+                    <value>hearts</value>
+                    <label>Hearts</label>
+                    <label lang="de">Herzen</label>
+                </option>
+                <option>
+                    <value>oval</value>
+                    <label>Oval</label>
+                    <label lang="de">Oval</label>
+                </option>
+                <option>
+                    <value>puff</value>
+                    <label>Puff</label>
+                    <label lang="de">Wellen</label>
+                </option>
+                <option>
+                    <value>rings</value>
+                    <label>Rings</label>
+                    <label lang="de">Ringe</label>
+                </option>
+                <option>
+                    <value>tail-spin</value>
+                    <label>Tail spin</label>
+                    <label lang="de">Tail Spinner</label>
+                </option>
+                <option>
+                    <value>three-dots</value>
+                    <label>Three dots</label>
+                    <label lang="de">Drei Punkte</label>
+                </option>
+            </store>
+        </element>
+
+        <element type="color" scope="shop">
+            <name>apcIcLoadingColor</name>
+            <label>
+                <![CDATA[
+                    Color of the predefined loading icons
+                    <br><br>
+                    <span style="font-size: 15px; text-transform: uppercase; color: #239de7;">Own icon upload</span>
+                ]]>
+            </label>
+            <label lang="de">
+                <![CDATA[
+                    Farbe der vordefinierten Ladesymbole
+                    <br><br>
+                    <span style="font-size: 15px; text-transform: uppercase; color: #239de7;">Eigenes Symbol hochladen</span>
+                ]]>
+            </label>
+            <value>#000</value>
+            <description>Change the color of the defined load icons (not for self uploaded icons)</description>
+            <description lang="de">Ändert die Farbe des verdefinierten Ladesymbols (nicht für selbst hochgeladene Icons)</description>
+        </element>
+
+        <!-- custom pinner -->
+        <element type="mediaselection" scope="shop">
+            <name>apcIcLoadingIcon</name>
+            <label>Loading icon</label>
+            <label lang="de">Ladesymbol</label>
+            <description>Icon which is displayed when the image is not yet loaded.</description>
+            <description lang="de">Symbol welches angezeigt wird, wenn das Bild noch nicht geladen ist.</description>
+        </element>
+
+        <element required="false" scope="shop">
+            <name>apcIcLoadingIconBase64</name>
+            <label>
+                <![CDATA[
+                    Loading icon as Base64 (Automatically set during upload)
+                    <br><br>
+                    <span style="font-size: 15px; text-transform: uppercase; color: #239de7;">Icon settings</span>
+                ]]>
+            </label>
+            <label lang="de">
+                <![CDATA[
+                    Ladesymbol als Base64 (Wird automatisch beim Upload gesetzt)
+                    <br><br>
+                    <span style="font-size: 15px; text-transform: uppercase; color: #239de7;">Symbol Einstellungen</span>
+                ]]>
+            </label>
+            <description>Icon which is displayed when an image is not yet loaded. (as Base64 text)</description>
+            <description lang="de">Symbol welches angezeigt wird, wenn ein Bild noch nicht geladen ist. (als Base64 Text)</description>
+        </element>
+
+        <!-- Icon settings -->
+        <element type="select" scope="shop">
+            <name>apcIcLoadingEffect</name>
+            <label>Animation effect</label>
+            <label lang="de">Animations-Effekt</label>
+            <value>show</value>
+            <description>Animation effect to fade in the loaded image.</description>
+            <description lang="de">Animationseffekt zum einblenden des geladenen Bildes.</description>
+            <store>
+                <option>
+                    <value>show</value>
+                    <label>Just show</label>
+                    <label lang="de">Einfach anzeigen</label>
+                </option>
+                <option>
+                    <value>fadeIn</value>
+                    <label>Fade in</label>
+                    <label lang="de">Einblenden</label>
+                </option>
+            </store>
+        </element>
+
+        <element type="number" scope="shop">
+            <name>apcIcLoadingEffectTime</name>
+            <label>Animation effect time</label>
+            <label lang="de">Animation Effektzeit</label>
+            <value>0</value>
+            <description>Effect Time while the image is displayed, in milliseconds (0 = default)</description>
+            <description lang="de">Effekt Zeit während das Bild eingeblendet wird, in Millisekunden (0 = Standard)</description>
+        </element>
+
+        <element type="select" scope="shop">
+            <name>apcIcLoadingIconSize</name>
+            <label>Size of loading icon</label>
+            <label lang="de">Größe des Ladesymbols</label>
+            <value>20</value>
+            <store>
+                <option><value>10</value><label>10%</label></option>
+                <option><value>20</value><label>20%</label></option>
+                <option><value>30</value><label>30%</label></option>
+                <option><value>40</value><label>40%</label></option>
+                <option><value>50</value><label>50%</label></option>
+                <option><value>60</value><label>60%</label></option>
+                <option><value>70</value><label>70%</label></option>
+                <option><value>80</value><label>80%</label></option>
+                <option><value>90</value><label>90%</label></option>
+                <option><value>100</value><label>100%</label></option>
+            </store>
+        </element>
+
+        <element type="select" scope="shop">
+            <name>apcIcLoadingProductImageSize</name>
+            <label>Size of product image</label>
+            <label lang="de">Größe des Produktbildes</label>
+            <value>0</value>
+            <description>Size of the product image, not for product layout 'big image' (200x200 = small, 600x600 = big, 1280x1280 = very big)</description>
+            <description>Größe des Produktbildes, nicht für Produkt Layout 'Großes Bild' (200x200 = small, 600x600 = big, 1280x1280 = very big)</description>
+            <store>
+                <option>
+                    <value>0</value>
+                    <label>Small</label>
+                    <label lang="de">Klein</label>
+                </option>
+                <option>
+                    <value>1</value>
+                    <label>Big</label>
+                    <label lang="de">Groß</label>
+                </option>
+                <option>
+                    <value>2</value>
+                    <label>Very big</label>
+                    <label lang="de">Sehr groß</label>
+                </option>
+            </store>
+        </element>
+
+        <element type="boolean">
+            <name>apcIcLoadingInstantLoad</name>
+            <label>Activate Icload as early as possible</label>
+            <label lang="de">Icload so früh wie möglich aktivieren</label>
+            <value>true</value>
+            <description>
+                <![CDATA[
+                    Loads Icload as soon as possible when the setting is set to Yes. <br>
+                    Otherwise, only after the page has finished loading. <br>
+                    (default: true)
+                ]]>
+            </description>
+            <description lang="de">
+                <![CDATA[
+                    Lädt Icload so früh wie möglich, wenn die Einstellung auf Ja steht. <br>
+                    Andernfalls erst nachdem die Seite fertig geladen ist. <br>
+                    (Standard: Ja)
+                ]]>
+            </description>
+        </element>
+
+        <element type="boolean">
+            <name>apcIcLoadingPreloadAfterLoad</name>
+            <label>Should load all elements after the window onload event?</label>
+            <label lang="de">Sollen alle Elemente nach dem Seiten onload Event geladen werden?</label>
+            <value>false</value>
+            <description>Note: This will then still download those not-in-view images, so that other downloads after onload are not blocked.</description>
+            <description lang="de">Hinweis: Dadurch werden dann immer noch die nicht angezeigten Bilder heruntergeladen, so dass andere Downloads nach dem Onload nicht blockiert werden.</description>
+        </element>
+    </elements>
+</config>

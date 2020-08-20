@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd"
+>
+    <label>Ic loading</label>
+    <label lang="de">Ic Loading</label>
+    <version>3.7.8</version>
+    <copyright>(c)</copyright>
+    <license>proprietary</license>
+    <author>Apricode</author>
+    <link>apricode.am</link>
+    <description>Ic Loading loads pictures in your shop only in the visible area of the website, while the texts for the articles are already completely loaded. So search engines have full access to the article descriptions at any time, while your users can enjoy a much faster loading time of the page.</description>
+    <description lang="de">Ic Loading lädt Bilder in Ihrem Shop nur im sichtbaren Bereich der Webseite, während die Texte zu den Artikeln bereits komplett geladen werden. So haben Suchmaschinen jederzeit den vollen Zugriff auf die Artikelbeschreibungen, während Ihre Nutzer eine wesentlich schnellere Ladezeit der Seite genießen können.</description>
+
+    <compatibility minVersion="5.2.11" />
+
+    <changelog version="2.5.0">
+        <changes>
+            <![CDATA[
+                - Removed webp support (source blocks still available)
+                - Added preloadAfterLoad setting
+            ]]>
+        </changes>
+        <changes lang="de">
+            <![CDATA[
+                - Support für webp eingestellt (Bilder-Source Blöcke dennoch enthalten zum Erweitern)
+                - preloadAfterLoad Einstellung hinzugefügt
+            ]]>
+        </changes>
+    </changelog>
+
+    <changelog version="2.4.0">
+        <changes>Added product main slider to icload</changes>
+        <changes lang="de">Produkthauptslider zu Icload hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="2.3.0">
+        <changes>Added an option to control the icload initialisation</changes>
+        <changes lang="de">Option zum Kontrollieren der Icload Initialisierung hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="2.2.0">
+        <changes>
+            <![CDATA[
+                - Effect configuration loads globally now
+                - deleted unneeded data-src
+            ]]>
+        </changes>
+        <changes lang="de">
+            <![CDATA[
+                - Effekt-Konfiguration wird jetzt Global geladen
+                - Nicht verwendetes data-src entfernt
+            ]]>
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes>Added support to webp</changes>
+        <changes lang="de">Support für webp hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes>Added a predispatch event for plugin settings assignment</changes>
+        <changes lang="de">Predispatch-Event für Plugin-Einstellungen hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes>
+            <![CDATA[
+                - Ic load base completely replaced to reduce susceptibility to errors
+                - Load delay removed from plugin
+                - Plugin is no longer applied to every single image, but acts globally to gain performance
+                - Descriptions in the settings changed
+                - Removed the spinning circles (Load icon)
+            ]]>
+        </changes>
+        <changes lang="de">
+            <![CDATA[
+                - Ic load Basis komplett ausgewechselt um Fehleranfälligkeit zu verringern
+                - Ladeverzögerung aus Plugin entfernt
+                - Plugin wird nicht mehr auf jedes einzelne Bild angewendet, sondern agiert global um Performance zu gewinnen
+                - Beschreibungen in den Einstellungen abgeändert
+                - Drehende Kreise entfernt (Ladesymbol)
+            ]]>
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.1">
+        <changes>Changed the widget event subscriber from post to pre</changes>
+        <changes lang="de">Widget Event-Subscriber von post zu pre geändert</changes>
+    </changelog>
+
+    <changelog version="1.1.0">
+        <changes>Added a config for changing product image size</changes>
+        <changes lang="de">Einstellung für die Produktbild Größe hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="1.0.6">
+        <changes>Added icon load on tab switch</changes>
+        <changes lang="de">Icon Laden beim Wechsel von Tabs hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="1.0.5">
+        <changes>Sporadic problem with hidden slider article fixed</changes>
+        <changes lang="de">Sporadisch auftretendes Problem bei versteckten Slider-Artikel behoben</changes>
+    </changelog>
+
+    <changelog version="1.0.5">
+        <changes>Sporadic problem with hidden slider article fixed</changes>
+        <changes lang="de">Sporadisch auftretendes Problem bei versteckten Slider-Artikel behoben</changes>
+    </changelog>
+
+    <changelog version="1.0.4">
+        <changes>Fixed the ajax article slider bug</changes>
+        <changes lang="de">Bug im Ajax Artikel-Slider behoben</changes>
+    </changelog>
+
+    <changelog version="1.0.3">
+        <changes>Support for big-image Layout added</changes>
+        <changes lang="de">Unterstützung für big-image Layout hinzugefügt</changes>
+    </changelog>
+
+    <changelog version="1.0.2">
+        <changes>Placeholder for pictures updated (Chrome bug fixed)</changes>
+        <changes lang="de">Platzhalter für Bilder aktualisiert (Chrome bug behoben)</changes>
+    </changelog>
+
+    <changelog version="1.0.1">
+        <changes>minVersion from 5.4 to 5.2.11 updated</changes>
+        <changes lang="de">minVersion von 5.4 auf 5.2.11 aktualisiert</changes>
+    </changelog>
+
+    <changelog version="1.0.0">
+        <changes>Initial Release</changes>
+        <changes lang="de">Erste Veröffentlichung</changes>
+    </changelog>
+</plugin>

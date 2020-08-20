@@ -1,0 +1,35 @@
+{
+  "name": "apc/ic-loading",
+  "keywords": ["shopware", "icloading", "ic", "loading", "plugin"],
+  "description": "Ic loading for Shopware",
+  "license": "proprietary",
+  "type": "shopware-plugin",
+  "extra": {
+    "installer-name": "ApcIcLoading"
+  },
+  "replace": {
+    "symfony/polyfill-mbstring": "~1.0"
+  },
+  "require": {
+    "php" : "^5.6 || ^7.0",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^4.3",
+    "friendsofphp/php-cs-fixer": "^2.10",
+    "roave/security-advisories": "dev-master",
+    "mikey179/vfsStream": "^1.6"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test-spec": "phpspec run --format dot",
+    "cs-check": "php-cs-fixer fix --dry-run --allow-risky=yes -v",
+    "cs-fix": "php-cs-fixer fix --allow-risky=yes -v",
+    "preCommit": "curl -sS https://gist.githubusercontent.com/jlaute/a5c863cdea8ecb7d968c409bb6a2b559/raw/8cd08b8dcbaaf368d4dbef7e4f1779977ab6a8a5/pre-commit.sh > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit",
+    "post-install-cmd": "@preCommit",
+    "post-update-cmd": "@preCommit"
+  }
+}

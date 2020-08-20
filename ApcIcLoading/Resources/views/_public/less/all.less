@@ -1,0 +1,22 @@
+img {
+	&.ic,
+	&.icloading {
+		min-width: 80%;
+		color: transparent;
+		background: url(@icLoadingIcon) no-repeat 50% 50%;
+		background-size: ~"@{icLoadingIconSize}%";
+	}
+
+	&.icloaded {
+		opacity: 0;
+	}
+}
+
+.product--image-container {
+	img {
+		&.ic,
+		&.icloading {
+			min-height: 100%;
+		}
+	}
+}

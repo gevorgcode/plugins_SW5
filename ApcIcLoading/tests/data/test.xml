@@ -1,0 +1,6 @@
+<svg fill="{@color}" stroke="{@color}">
+    <circle fill="{@color}"/>
+    <linearGradient>
+        <stop stop-color="{@color}"/>
+    </linearGradient>
+</svg>
