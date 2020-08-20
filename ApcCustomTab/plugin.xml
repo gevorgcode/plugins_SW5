@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd"
+>
+    <label>Custom tabs</label>
+    <label lang="de">Benutzerdefinierte Registerkarten</label>
+    <version>1.0.8</version>
+    <copyright>(c) by isento eCommerce solutions GmbH</copyright>
+    <author>Apricode</author>
+    <link>www.apricode.co</link>
+
+    <compatibility minVersion="5.2.11" />
+
+</plugin>
