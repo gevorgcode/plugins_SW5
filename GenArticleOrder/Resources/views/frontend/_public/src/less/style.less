@@ -1,0 +1,11 @@
+.action--sort.action--content.block{
+    & when (@gen-hide-sort = 1){
+   		display:none;
+   	}
+}
+
+.listing--actions {
+	& when (@gen-hide-filter-and-sort = 1){
+   		display:none;
+   	}
+}

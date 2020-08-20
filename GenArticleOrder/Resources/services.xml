@@ -1,0 +1,82 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="gen_article_order.subscriber.backendarticle"
+                 class="GenArticleOrder\Subscriber\BackendArticle">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.backendproductstream"
+                 class="GenArticleOrder\Subscriber\BackendProductStream">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="gen_article_order.subscriber.backendcategory"
+                 class="GenArticleOrder\Subscriber\BackendCategory">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.backendindex"
+                 class="GenArticleOrder\Subscriber\BackendIndex">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.backendrelatedsortcontroller"
+                 class="GenArticleOrder\Subscriber\BackendRelatedSortController">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.backendsortcontroller"
+                 class="GenArticleOrder\Subscriber\BackendSortController">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.corearticles"
+                 class="GenArticleOrder\Subscriber\CoreArticles">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.frontend"
+                 class="GenArticleOrder\Subscriber\Frontend">
+            <argument type="service" id="service_container"/>
+            <argument>%gen_article_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.subscriber.criteriahandler"
+                 class="GenArticleOrder\Subscriber\CriteriaHandler">
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+         <service id="gen_article_order.subscriber.sortinghandler"
+                 class="GenArticleOrder\Subscriber\SortingHandler">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="gen_article_order.dbal_query_builder_factory"
+                 class="GenArticleOrder\SearchBundle\QueryBuilderFactory"
+                 decorates="shopware_searchdbal.dbal_query_builder_factory"
+                 public="false">
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="gen_article_order.dbal_query_builder_factory.inner"/>
+            <argument type="service" id="dbal_connection" />
+        </service>
+    </services>
+</container>

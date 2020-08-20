@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Manuelle Artikelsortierung</label>
+    <label lang="en">Manual sorting of articles</label>
+
+    <version>2.0.1</version>
+    <author>gen - Softwareentwicklung</author>
+    <compatibility minVersion="5.3.0" />
+	
+	<changelog version="2.0.1">
+    	<changes lang="de">Abfrage des Shopware-Plugins Bonussystem</changes>
+        <changes lang="en">Check Shopware Plugin Bonussystem</changes>
+    </changelog>
+	<changelog version="2.0.0">
+    	<changes lang="de">Kompatibilität mit dem Shopware-Plugin Bonussystem hergestellt</changes>
+        <changes lang="en">Add compatibility for the Shopware plugin Bonussystem</changes>
+    </changelog>
+	<changelog version="1.9.9">
+    	<changes lang="de">Seitentrennung (Pagingbar) in Auswahl Product Streams entfernt</changes>
+        <changes lang="en">removed pagingbar in selected product streams</changes>
+    </changelog>
+	<changelog version="1.9.8">
+    	<changes lang="de">Abfrage in QueryBuilderFactory für Frontend hinzugefügt</changes>
+        <changes lang="en">add a request in QueryBuilderFactory for frontend</changes>
+    </changelog>
+	<changelog version="1.9.7">
+    	<changes lang="de">Kompatibilität zwischen Shopware 5.6 und 5.5 angepasst</changes>
+        <changes lang="en">edited compatibility between Shopware 5.6 and 5.5</changes>
+    </changelog>
+	<changelog version="1.9.6">
+    	<changes lang="de">Kompatibilität für Shopware 5.6</changes>
+        <changes lang="en">add compatibility for Shopware 5.6</changes>
+    </changelog>
+	<changelog version="1.9.5">
+    	<changes lang="de">Inaktive Artikel farbig hinterlegen</changes>
+        <changes lang="en">inactive articles with background colour</changes>
+    </changelog>
+	<changelog version="1.9.4">
+    	<changes lang="de">Sortierung in Auswahlstream</changes>
+        <changes lang="en">Add manual sorting in selection streams</changes>
+    </changelog>
+	<changelog version="1.9.3">
+    	<changes lang="de">Kompatibilität in QueryBuilderFactory zu anderen Plugins hergestellt</changes>
+        <changes lang="en">Add compatibility in querybuilderfactory for another plugins</changes>
+    </changelog>
+	<changelog version="1.9.2">
+    	<changes lang="de">Product Stream Sortierung in Kategorien</changes>
+        <changes lang="en">Add product stream sort in categories</changes>
+    </changelog>
+	<changelog version="1.9.1">
+    	<changes lang="de">Buttons zum Verschieben hinzugefügt</changes>
+        <changes lang="en">Add buttons for sorting</changes>
+    </changelog>
+	<changelog version="1.9.0">
+    	<changes lang="de">Kompatibilität mit dem Plugin Pseudovarianten hergestellt</changes>
+        <changes lang="en">Add compatibility for the plugin pseudovariants</changes>
+    </changelog>
+	<changelog version="1.8.9">
+    	<changes lang="de">Anpassung für die Vorschau in der Intelligenten Suche</changes>
+        <changes lang="en">Changes for the preview of the Shopware plugin Intelligent Search in the backend</changes>
+    </changelog>
+	<changelog version="1.8.8">
+    	<changes lang="de">Shopware-Versionsabfrage für Shopware 5.3 in Subscriber entfernt, um Fehler abzufangen</changes>
+        <changes lang="en">removed version check for Shopware 5.3 in subscriber for catching errors</changes>
+    </changelog>
+    <changelog version="1.8.7">
+    	<changes lang="de">Kompatibilität für Shopware 5.5</changes>
+        <changes lang="en">add compatibility for Shopware 5.5</changes>
+    </changelog>
+    <changelog version="1.8.6">
+    	<changes lang="de">Abfangen eines Fatal-Errors in Konsolenabfragen</changes>
+        <changes lang="en">catch a fatal error on requests in the console</changes>
+    </changelog>
+    <changelog version="1.8.5">
+    	<changes lang="de">Abfangen eines Fatal-Errors in Konsolenabfragen</changes>
+        <changes lang="en">catch a fatal error on requests in the console</changes>
+    </changelog>
+    <changelog version="1.8.4">
+    	<changes lang="de">Abfangen eines Null-Errors in Konsolenabfragen</changes>
+        <changes lang="en">catch a null error on requests in the console</changes>
+    </changelog>
+    <changelog version="1.8.3">
+    	<changes lang="de">Fehler in der Update-Funktion behoben</changes>
+        <changes lang="en">corrected error in the update function</changes>
+    </changelog>
+    <changelog version="1.8.2">
+    	<changes lang="de">Wechsel zum neuen Pluginsystem</changes>
+        <changes lang="en">changed to new plugin system</changes>
+    </changelog>
+</plugin>

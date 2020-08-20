@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+   <elements>
+        <element required="true" type="boolean">
+            <name>genSortSimilar</name>
+            <label lang="de">ähnliche Artikel sortieren?</label>
+            <label lang="en">sort similar articles?</label>
+            <value>true</value>
+        </element>
+         <element required="true" type="boolean">
+            <name>genSortRelated</name>
+            <label lang="de">Zubehör-Artikel sortieren?</label>
+            <label lang="en">sort related articles?</label>
+            <value>true</value>
+        </element>
+        <element required="true" type="boolean">
+            <name>genHideColoredArticles</name>
+            <label lang="de">sortierte Artikel farbig im Backend anzeigen?</label>
+            <label lang="en">show sorted articles with a background color?</label>
+            <value>true</value>
+        </element>
+        <element required="true" type="boolean">
+            <name>genHideSort</name>
+            <label lang="de">Sort.-Auswahl ausblenden</label>
+            <label lang="en">hide sort select field</label>
+            <value>false</value>
+           	<description lang="de">Sortierungs-Auswahlfeld in der Kategorie verstecken->Theme-Cache neu komplieren!</description>
+           	<description lang="en">hide the sort select field in a category->Recompile your Theme-Cache!</description>
+        </element>
+        <element required="true" type="boolean">
+            <name>genHideFilterSort</name>
+            <label lang="de">Filter u. Sort.-Auswahl ausblenden</label>
+            <label lang="en">hide sort and filter select field</label>
+            <value>false</value>
+           	<description lang="de">Sortierungs-Auswahlfeld in der Kategorie verstecken->Theme-Cache neu komplieren!</description>
+           	<description lang="de">hide the sort and filter select field in a category->Recompile your Theme-Cache!</description>
+        </element>
+        <element required="true" type="select">
+			<name>unsortordercategory</name>
+			<label lang="de">unsortierte neue Artikel</label>
+			<label lang="en">unsorted new articles</label>
+			<value>endcategory</value>
+		    <store>
+		        <option>
+		            <value>endcategory</value>
+		            <label lang="de">default (ans Ende anhaengen)</label>
+		            <label lang="en">default (add articles at the end)</label>
+		        </option>
+		        <option>
+		            <value>startcategory</value>
+		            <label lang="de">am Anfang einfuegen</label>
+		            <label lang="en">add articles at the beginning</label>
+		        </option>
+		    </store>
+		</element>
+    </elements>
+</config>

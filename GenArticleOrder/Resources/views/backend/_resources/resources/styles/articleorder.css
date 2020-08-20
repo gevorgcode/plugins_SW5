@@ -1,0 +1,15 @@
+.x-grid-row-dropped-article > td{
+	background:#DAFF7F !important;
+}
+
+.x-grid-row-found-article > td div{
+	background:#FDFF96 !important;
+}
+
+.x-grid-row-inactive-article > td{
+	background:#FFDACE !important;
+}
+
+.x-grid-row-inactive-article:hover > td{
+	background:#FFFFFF !important;
+}

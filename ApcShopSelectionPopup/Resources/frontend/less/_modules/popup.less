@@ -1,0 +1,86 @@
+.vag_language_selecion{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999999;
+    display: none;
+    .box{
+        background: @body-bg;
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        z-index: 1000000;
+        .unitize-padding(20, 20);
+        border: 1px solid #828282;
+
+        .top-bar--language{
+            display: none;
+        }
+
+        .lang_select{
+            .unitize-width(270);
+
+            .select_panel{
+                cursor: pointer;
+                background-color: #fff;
+                .unitize-padding(16,16);
+                color: #000;
+                .unitize(font-size, 16);
+                position: relative;
+                transition: 2s;
+                -ms-transition: 2s;
+                -webkit-transition: 2s;
+                -moz-transition: 2s;
+                .select_panel_arrow{
+                    position: absolute;
+                    top: 45%;
+                    .unitize(right,15);
+                    .unitize(font-size, 8);
+                    transition: 0.8s;
+                    -ms-transition: 0.8s;
+                    -webkit-transition: 0.8s;
+                    -moz-transition: 0.8s;
+                }
+                .select_panel_arrow_selected{
+                    transform: rotateX(180deg);
+                    -ms-transform: rotateX(180deg);
+                    -webkit-transform: rotateX(180deg);
+                    -moz-transform: rotateX(180deg);
+                    color: @brand-primary;
+                }
+            }
+            .lang_panel{
+                display: none;
+                .lang_sample{
+                    .unitize-padding(5, 16);
+                    background-color: #828282;
+                    color: white;
+                    .unitize(margin-top, 3);
+                    cursor: pointer;
+                    display: block;
+
+                    .lang_name{
+                        .unitize(margin-left, 10);
+                        .unitize(font-size, 13);
+                        font-weight: 400;
+                    }
+
+                    &:hover{
+                        background-color: @brand-secondary;
+                    }
+                }
+                .selected{
+                    background-color: @brand-secondary;                    
+                }
+            }
+        }
+
+    }
+}
+

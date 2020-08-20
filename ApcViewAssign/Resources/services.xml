@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="apc_view_assign.subscriber.apc" class="ApcViewAssign\Subscriber\ApcSubscriber">
+            <argument>%apc_view_assign.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber" />
+        </service>
+    </services>
+</container>
