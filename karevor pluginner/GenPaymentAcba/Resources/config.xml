@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <elements>          
+        <element type="boolean">
+            <name>testmode</name>
+            <label lang="en">Test mode</label>
+            <value>true</value>
+        </element>       
+        <element type="text">
+            <name>api_test_user_name</name>
+            <label lang="en">API User name Test</label>            
+        </element>
+        <element type="text">
+            <name>api_test_pass</name>
+            <label lang="en">Api password Test</label>            
+        </element> 
+        <element type="text">
+            <name>api_user_name</name>
+            <label lang="en">API User name Live</label>            
+        </element>
+        <element type="text">
+            <name>api_pass</name>
+            <label lang="en">Api password Live</label>            
+        </element>
+    </elements>
+</config>
