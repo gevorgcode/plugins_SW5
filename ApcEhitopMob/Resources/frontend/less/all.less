@@ -1,0 +1,64 @@
+@media screen and (min-width: 768px){
+    .ehi--note-cont{
+        display: none;
+    }
+}
+@media screen and (max-width: 767px){
+    .ehi--note-cont{
+        display: flex;
+        justify-content: space-between;
+        background: @brand-primary;
+        height: 65px;
+        border: 5px solid white;
+        align-items: center;
+        padding: 10px;
+        span{
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+    }
+    .ehi--close{
+        color: white;
+        &::before{
+            content: "";
+            border-top: 55px solid #fff;
+            border-left: 25px solid transparent;
+            border-right: 1px solid transparent;
+            height: 0;
+            width: 50px;
+            position: absolute;
+            right: 4px;
+            top: 5px;
+            opacity: 0.7;            
+        }
+        i{
+            font-size: 20px;
+            padding-right: 5px;
+        }
+    }
+    .ehi--note-l{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .ehi--top-img{
+        border-radius: 50%;
+        border: 5px solid #fff;
+        min-height: 65px;
+        min-width: 65px;
+    } 
+}
+@media screen and (max-width: 479px){
+    .ehi--note-cont span{
+        margin-right: 20px;
+        font-size: 15px; 
+    }
+    .ehi--close::before{
+        width: 30px;
+    }
+    .ehi--close i{
+        padding-right: 0;
+    }
+}
