@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element required="true" type="text" scope="shop">
+            <name>allowedFileTypes</name>
+            <label lang="de">Erlaubte Dateiendungen (Standard)</label>
+            <label lang="en">Allowed file extensions (default)</label>
+            <value>jpg;png;bmp;pdf</value>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>maxFileSize</name>
+            <label lang="de">Maximale Dateigröße (in MB)</label>
+            <label lang="en">Maximum file size (in MB)</label>
+            <value>8</value>
+        </element>
+    </elements>
+</config>
