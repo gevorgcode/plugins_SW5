@@ -1,0 +1,53 @@
+//\\//01.12.2021 -> 15% Rabatt auf Windows 10 Professional RabattCode : 01122021
+//\\//02.12.2021 -> 20% Rabatt auf Windows 10 Home RabattCode: 02122021
+//\\//03.12.2021 -> 30% Rabatt auf Office 2019 Home and Business RabattCode: 03122021
+//!-//04.12.2021 -> 30% Rabatt auf Office 2021 Home and Business RabattCode : 04122021
+//\\//05.12.2021 -> 25% Rabatt auf Windows Server 2019 Standard RabattCode : 05122021
+//!-//06.12.2021 -> 50% Rabatt auf Remote Desktop Lizenzen RabattCode -> 06122021
+//\-//07.12.2021 -> 20% Rabatt auf Windows 7 Professional RabattCode -> 07122021
+//!-//08.12.2021 -> 30% Rabatt auf Office 2021 RabattCode: 08122021
+//!-//09.12.2021 -> 40 % Rabatt auf Office 2021 Professional RabattCode: 09122021
+//!-//10.12.2021 -> 35% Rabatt auf Kombi-Pakete RabattCode: 10122021
+//\\//11.12.2021 -> 30% Rabatt auf Exchange Server 2019 Standard RabattCode :11122021
+//\\//12.12.2021 -> 40% Rabatt auf Project 2019 Standard RabattCode: 12122021
+//!-//13.12.2021 -> 40% Windows 11 Home RabattCode: 13122021
+//!-//14.12.2021 -> 40% Windows 11 Professional RabattCode: 14122021
+//\\//15.12.2021 -> 40% Project 2019 Professional RabattCode: 15122021
+//\\//16.12.2021 -> 40% Visio 2019 RabattCode: 16122021
+//\\//17.12.2021 -> 40% Office 2016 Standard RabattCode: 17122021
+//!-//18.12.2021 -> 40% Windows Server 2022 Standard RabattCode: 18122021
+//!-//19.12.2021 -> 40% Remote Desktop CALs 2022 RabattCode: 19122021
+//!-//20.12.2021 -> 40% Windows Server 2016 RabattCode: 20122021
+//!\//21.12.2021 -> 40% Office 2013 RabattCode: 21122021
+//!-//22.12.2021 -> 40% Office 2021 RabattCode: 22122021
+//!\//23.12.2021 -> 40% Windows 10 RabattCode: 23122021
+//!-//24.12.2021 -> 50% Rabatt auf Windows 11 RabattCode: 24122021
+
+
+//no image
+
+// 04.12.2021 -> 30% Rabatt auf Office 2021 Home and Business RabattCode : 04122021
+
+// 06.12.2021 -> 50% Rabatt auf Remote Desktop Lizenzen RabattCode -> 06122021
+
+// 07.12.2021 -> 20% Rabatt auf Windows 7 Professional RabattCode -> 07122021
+
+// 08.12.2021 -> 30% Rabatt auf Office 2021 RabattCode: 08122021
+
+// 09.12.2021 -> 40 % Rabatt auf Office 2021 Professional RabattCode: 09122021
+
+// 10.12.2021 -> 35% Rabatt auf Kombi-Pakete RabattCode: 10122021
+
+// 13.12.2021 -> 40% Windows 11 Home RabattCode: 13122021
+
+// 14.12.2021 -> 40% Windows 11 Professional RabattCode: 14122021
+
+// 18.12.2021 -> 40% Windows Server 2022 Standard RabattCode: 18122021
+
+// 19.12.2021 -> 40% Remote Desktop CALs 2022 RabattCode: 19122021
+
+// 20.12.2021 -> 40% Windows Server 2016 RabattCode: 20122021
+
+// 22.12.2021 -> 40% Office 2021 RabattCode: 22122021
+
+// 24.12.2021 -> 50% Rabatt auf Windows 11 RabattCode: 24122021
