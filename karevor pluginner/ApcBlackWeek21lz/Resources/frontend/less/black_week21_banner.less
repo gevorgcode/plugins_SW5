@@ -1,0 +1,309 @@
+@media screen and (min-width: 768px) {
+    .black--week21-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        background: #9C4693;
+        position: relative;
+        z-index: 0;
+        &::before{
+            content: "";
+            position: absolute;
+            height: 100px;
+            width: 50%;
+            left: 0;
+            background: #30142D;
+            z-index: -1;
+        }
+    }
+    .black--week21-content {
+        width: 1260px;
+        max-width: 100%;
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+    }
+    
+    .black--week21-counter-cont-txt {
+        font: normal normal bold 25px/30px Open Sans;
+        color: #fff;
+        margin-top: -9px;
+    }
+    .black--week21-counter-cont-counter {
+        display: flex;
+        flex-direction: column;
+        min-width: 220px;
+        background: #30142D;
+        height: 100%;
+        justify-content: center;    
+        margin-top: -6px;    
+    }
+    .black--week21-counter-cont-counter-numbers,
+    .black--week21-counter-cont-counter-undernumber {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            width: 33.33%;
+            text-align:center;
+            color: white;
+        }
+    }
+    .black--week21-counter-cont-counter-numbers{
+        div{
+            font: normal normal bold 50px/50px Open Sans;
+            color: #9C4693;
+        }
+    }
+    
+    .black--week21-counter-cont-counter-undernumber{
+        font: normal normal normal 13px/15px Open Sans;
+    }
+    
+    .black--week21-rabatt-cont {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .black--week21-rabatt-l-t {
+        font: normal normal bold 38px/38px Open Sans;
+        color: #A2DED7;
+        span{
+            font-size: 50px;
+        }
+    }
+    .black--week21-rabatt-l-b {
+        display: flex;
+        width: max-content;
+        font: normal normal bold 13px/18px Open Sans;
+        color: #A2DED7;
+        letter-spacing: 0.2px;
+    }
+    .black--week21-rabatt-r {
+        font: normal normal normal 13px/18px Open Sans;
+        color: white;
+        margin-bottom: -6px;
+        span{
+            font-weight: bold;
+        }
+    }    
+    .black--week21-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        padding: 2px;
+    }
+    .black--week21-counter-img-mob,
+    .black--week21-counter-cont-txt1-mob{
+        display: none;
+    }
+    .black--week21-counter-cont-counter-after {
+        position: relative;
+        width: 40px;
+        min-width: 40px;
+        height: 100%;
+        &::after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 50px 0 50px 40px;
+            border-color: transparent transparent transparent #30142D;
+            position: absolute;
+            top: 0;
+        }        
+        &::before{
+            content: "";
+            position: absolute;
+            background: #30142D;
+            height: 100%;
+            width: 250px;
+            left: -250px;
+            z-index: -1;
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1314px) {
+    .black--week21-content {
+        margin-right: 30px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1259px) {
+    .black--week21-counter-cont-txt{
+        font-size: 23px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .black--week21-counter-cont-txt{
+        display: none;
+    }
+    .black--week21-content {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .black--week21-counter-img-desc,
+    .black--week21-counter-cont-img,
+    .black--week21-counter-cont-counter-after{
+        display: none;
+    }
+    .black--week21-content {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 50%;
+        position: relative;
+        align-items: flex-end;
+        padding-right: 50px;
+        padding-top: 27px;
+        padding-bottom: 15px;
+    }
+    .black--week21-counter-cont-counter {
+        width: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+    .black--week21-counter-cont-txt1-mob,
+    .black--week21-rabatt-l,
+    .black--week21-rabatt-r{
+        width: 170px;
+    }
+
+
+    .black--week21-counter-cont-counter-numbers,
+    .black--week21-counter-cont-counter-undernumber {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            width: 33.33%;
+            text-align:center;
+        }
+    }
+    .black--week21-counter-cont-counter-numbers{
+        position: absolute;
+        bottom: 30px;
+        width: 225px;
+        padding-left: 32px;
+        div{
+            color: #9C4693;
+            font: normal normal bold 35px/35px Open Sans;
+        }
+    }
+    .black--week21-counter-cont-counter-undernumber{
+        position: absolute;
+        bottom: 15px;
+        width: 225px;
+        padding-left: 30px;
+        div{
+            font: normal normal normal 12px/14px Open Sans;
+            color: #FFFFFF;
+        }
+    }
+    .black--week21-counter-cont-txt {
+        display: none;
+    }
+    .black--week21-rabatt-l{
+        display: flex;
+        align-items: center;
+    }
+    .black--week21-rabatt-l-b{
+        width: min-content;
+    }
+    .black--week21-banner {
+        height: 175px;
+        background: #30142D;
+        position: relative;
+    }    
+    .black--week21-counter-cont {
+        width: 220px;
+        height: 100%;
+    }
+    .black--week21-counter-img-mob{
+        width: 220px;
+        height: 166px;
+    }
+    .black--week21-counter-cont-txt1-mob {
+        font: normal normal bold 15px/18px Open Sans;
+        color: #FFFFFF;
+    }
+    .black--week21-rabatt-l-t {
+        font: normal normal bold 31px/42px Open Sans;
+        color: #A2DED7;
+        span{
+            font-size: 35px;
+        }
+    }    
+    .black--week21-rabatt-l-b {
+        width: min-content;
+        font: normal normal bold 13px/13px Open Sans;
+        color: #A2DED7;
+        margin-left: 5px;
+    }
+    .black--week21-rabatt-r {
+        font: normal normal normal 12px/16px Open Sans;
+        color: #FFFFFF;
+        span{
+            font-weight: bold;
+            font-family: 'Open Sans';
+        }
+    }
+    .black--week21-rabatt-cont {
+        padding-top: 18px;
+    }
+    .black--week21-close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: white;
+    }
+}
+@media screen and (max-width: 479px) {
+    .black--week21-counter-cont-counter-numbers {
+        width: 100%;
+        padding-left: 5px;
+        bottom: 10px;
+    }
+    .black--week21-counter-cont-counter-undernumber {
+        width: 100%;
+        padding-left: 5px;
+        bottom: -4px;
+        div{
+            font-size: 10px;
+        }
+    }
+    .black--week21-counter-cont-txt1-mob, .black--week21-rabatt-l, .black--week21-rabatt-r{
+        width: 150px;
+        max-width: 98%;
+    }
+    .black--week21-content{
+        padding-right: 20px;
+        padding-left: 165px;
+        margin-bottom: 19px;
+        padding-top: 20px;
+    }
+    .black--week21-counter-cont-txt1-mob {
+        font-size: 13px;
+    }
+    .black--week21-rabatt-r {
+        font-size: 10px;
+    }
+    .black--week21-counter-cont-counter{
+        width: 160px;
+        top: -20px;
+    }
+    .black--week21-banner{
+        height: 160px;
+    }
+}

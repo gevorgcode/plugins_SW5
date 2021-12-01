@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd"
+>
+    <label>Apc Black Week 2021 lizenzguru</label>
+    <version>1.0.0</version>
+    <author>Apricode</author>
+    <link>www.apricode.co</link>
+
+    <compatibility minVersion="5.4.0" />
+
+</plugin>
