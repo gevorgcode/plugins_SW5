@@ -1,0 +1,27 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="akn_cron_mail_losts.subscriber.templates" class="AknCronMailLosts\Subscriber\TemplateSubscriber">
+            <argument>%akn_cron_mail_losts.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="akn_cron_mail_losts.send_lost_mail" class="AknCronMailLosts\Services\SendLostMail" public="true"/>
+        <service id="akn_cron_mail_losts.send_rgister_birthday_mail" class="AknCronMailLosts\Services\SendRegisterBirthdayMail" public="true"/>
+
+        <service
+            id="akn_cron_mail_losts.commands.lost_mail_command"
+            class="AknCronMailLosts\Commands\SendLostMailCommand">
+            <tag name="console.command" command="akn:send_mail:lost"/>
+        </service>
+        <service
+            id="akn_cron_mail_losts.commands.register_birthday_mail_command"
+            class="AknCronMailLosts\Commands\SendRegisterBirthdayMailCommand">
+            <tag name="console.command" command="akn:send_mail:register_birthday"/>
+        </service>
+        
+    </services>
+</container>
