@@ -48,6 +48,7 @@ After installing this plugin add code
         $this->forward('invoiceSent', null, null, ['email' => $email, 'orderNumber' => $orderNumber]); 
     }
 2. add this function  str 477-495 ApcLicenseStatus/Components/Helper.php
+
 public function getMailSendEmail($email){
 
         $sql = "SELECT `s_user_attributes`.`invoice_email` 
