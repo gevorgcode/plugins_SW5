@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="apc_multi_user_accounts.subscriber.templates" class="ApcMultiUserAccounts\Subscriber\Subscriber">
+            <argument>%apc_multi_user_accounts.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="apc_multiuser_account_service" class="ApcMultiUserAccounts\Services\AccountService" public="true">
+            <argument type="service" id="models" />
+        </service>
+        <service id="apc_multiuser_user_service" class="ApcMultiUserAccounts\Services\UserService" public="true">
+            <argument type="service" id="models" />
+        </service>
+    </services>
+</container>

@@ -1,0 +1,107 @@
+.account--invitation-form {
+    .account--welcome.panel {
+        margin-bottom: 50px;
+    }
+    .select-field, .js--fancy-select {
+        max-width: unset;
+    }
+    .forms--content {
+        max-width: 800px;
+    }
+    .form--actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+//
+.role-description-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    &__head {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+    }
+
+    &__cell {
+        padding: 8px;
+        vertical-align: top;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+    thead {
+        background-color: #f5f5f5;
+    }
+}
+.multi--user--account--content {
+    padding-top: 30px;
+    margin-top: 0;
+    .account--welcome .panel--title{
+        font-size: 45px;
+        color: #203e45;
+    }
+    .panel--body p{
+        color: #203e45;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    &::after{
+        display: none;
+    }
+}
+.multiuser--accounts-item {
+    margin: 60px 0;
+    textarea#comment {
+        height: 90px;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        color: #203e45;
+    }
+    .privacy-information.block-group::after {
+        display: none;
+    }
+    .status_sys_name-active{
+        color: #4CAF50;
+    }
+    .status_sys_name-pending{
+        color: #FFC107;
+    }
+    .status_sys_name-inactive{
+        color: #9E9E9E;
+    }
+    .status_sys_name-rejected{
+        color: #FF5722;
+    }
+    .status_sys_name-deleted{
+        color: #D32F2F;
+    }
+}
+.forms--content .multiuser--accounts--email--error {
+    margin: 25px 0;
+}
+.multiuser--invite--message {
+    margin-top: 50px;
+}
+.is--ctl-multiuserinvite {
+    nav.content--breadcrumb .apc-partner--button {
+        display: none;
+    }
+}
+.forms--content .btn.multiuser-edit-button {
+    width: 100px;
+}
+.forms--content.account--invitation-form-resend {
+    margin-top: 60px;
+}
+.multiuser--edit--resend-email{
+    textarea#comment {
+        height: 90px;
+    }
+}

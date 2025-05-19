@@ -1,0 +1,76 @@
+@media screen and (min-width: 768px){
+    .is--ctl-multiusers,
+    .is--ctl-multiuserinvite {
+        .sidebar--categories-navigation:not(.sidebar--top-seller) {
+            display: none;
+        }
+        .content--wrapper{
+            margin-left: 260px;
+        }
+        .sidebar--categories-navigation.sidebar--top-seller {
+            margin-top: 20px;
+        }
+        .account--menu {
+            border-color: #203e45;
+            border-radius: 10px;
+            .navigation--headline,
+            .navigation--link.link--logout{
+                border-color: #203e45;
+            }
+        }
+        .sidebar-main{
+            display: block;
+        }
+        .content--wrapper .content.account--content {
+            margin-top: 30px;
+        }
+        aside.sidebar-main.off-canvas {
+            span.navigation--headline {
+                background: #223e45;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 9px 20px;
+                color: white;
+                border-radius: 8px 8px 0 0;
+            }
+            .navigation--entry:last-child {
+                background-color: #213e45;
+                margin-left: -20px;
+                margin-right: -20px;
+                margin-bottom: -10px;
+                border-radius: 0 0 8px 8px;
+                padding: 0px 20px 10px 20px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                .navigation--logout-personalized{
+                    display: none;
+                }
+                .navigation--logout {
+                    color: #fff;
+                    display: block;
+                }
+            }
+            .link--logout::before {
+                color: #fff;
+            }
+        }
+    }
+    .is--ctl-multiuserinvite {
+        .sidebar-main {
+            display: none;
+        }
+        .content--wrapper {
+            margin-left: 0;
+        }
+    }
+
+    .is--ctl-multiusers.is--act-edituser {
+        .content--wrapper{
+            margin-top: 60px;            
+        }
+        .sidebar-main {
+            padding-top: 10px;
+        }
+    }
+}
