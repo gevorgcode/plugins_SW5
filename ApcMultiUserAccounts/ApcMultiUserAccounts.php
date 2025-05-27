@@ -74,11 +74,26 @@ public function uninstall(UninstallContext $context)
     private function createDefaultRoles(EntityManagerInterface $entityManager)
     {
         $roles = [
-            'admin'        => ['description' => 'Vollständiger Zugriff auf alle Funktionen (Full access to all features)<br>Kann Benutzer verwalten, Bestellungen genehmigen und konfigurieren 🔧 (Can manage users, approve orders, and configure settings)', 'name' => 'Admin'],
-            'buyer'        => ['description' => 'Mitarbeiter mit Einkaufsrechten (Employee with purchasing rights)<br>Kann Produkte zum Warenkorb hinzufügen, Bestellungen aufgeben (mit Genehmigung falls erforderlich) und Bestellverlauf einsehen 📋 (Can add products to the cart, place orders (with approval if required), and view order history)', 'name' => 'Einkäufer'],
-            'accounting'        => ['description' => 'Zuständig für Rechnungen und Finanzen (Responsible for invoicing & finance)<br>Zugriff nur auf Rechnungen und Bestellverlauf, kein Einkauf möglich ✅ (Access to invoices & order history only, no purchasing allowed)', 'name' => 'Buchhaltung'],
-            'approver'        => ['description' => 'Kann Bestellungen anderer Benutzer genehmigen (Can approve other users orders)<br>Sieht eingereichte Bestellungen ein, kann genehmigen oder ablehnen 👤 (Views submitted orders, can approve or reject)', 'name' => 'Genehmiger'],
-            'user_read_only'        => ['description' => 'Eingeschränkter Benutzer – z. B. Praktikanten (Limited user – e.g. interns)<br>Kann nur den Produktkatalog einsehen, kein Einkauf erlaubt 🔒 (Can view product catalog only, no purchasing allowed)', 'name' => 'Nur anzeigen'],
+            'admin' => [
+                'description' => 'Vollständiger Zugriff auf alle Funktionen <br>Kann Benutzer verwalten, Bestellungen genehmigen und konfigurieren 🔧',
+                'name' => 'Admin'
+            ],
+            'buyer' => [
+                'description' => 'Mitarbeiter mit Einkaufsrechten <br>Kann Produkte zum Warenkorb hinzufügen, Bestellungen aufgeben und Bestellverlauf einsehen 📋',
+                'name' => 'Einkäufer'
+            ],
+            'accounting' => [
+                'description' => 'Zuständig für Rechnungen und Finanzen <br>Zugriff nur auf Rechnungen und Bestellverlauf, kein Einkauf möglich ✅',
+                'name' => 'Buchhaltung'
+            ],
+            'approver' => [
+                'description' => 'Kann Bestellungen anderer Benutzer genehmigen <br>Sieht eingereichte Bestellungen ein, kann genehmigen oder ablehnen 👤', 
+                'name' => 'Genehmiger'
+            ],
+            'user_read_only' => [
+                'description' => 'Eingeschränkter Benutzer – z. B. Praktikanten <br>Kann nur den Produktkatalog einsehen, kein Einkauf erlaubt 🔒',
+                'name' => 'Nur anzeigen'
+            ],
         ];
 
         foreach ($roles as $roleName => $roleData) {
@@ -101,14 +116,26 @@ public function uninstall(UninstallContext $context)
     private function createDefaultAccountStatuses(EntityManagerInterface $entityManager)
     {
         $statuses = [
-            'active'        => ['description' => 'Konto ist aktiv und kann verwendet werden', 'name' => 'Aktiv'],
-            'pending'       => ['description' => 'Konto wartet auf Genehmigung', 'name' => 'Ausstehend'],
-            'inactive'      => ['description' => 'Konto ist inaktiv und kann nicht verwendet werden', 'name' => 'Inaktiv'],
-            'rejected'      => ['description' => 'Einladung wurde vom Empfänger abgelehnt', 'name' => 'Abgelehnt'],            
-            'deleted'       => ['description' => 'Benutzerkonto wurde gelöscht und kann nicht mehr verwendet werden', 'name' => 'Gelöscht'],
-            //'overwritten'   => ['description' => 'Einladung wurde durch eine andere angenommene Einladung ersetzt', 'name' => 'Überschrieben'],
-            //'Gesperrt' => ['description' => 'Konto ist vorübergehend gesperrt', 'name' => 'blocked'],            
-            //'Freiwillig Ausgetreten' => ['description' => 'Benutzer hat freiwillig den Multi-User Account verlassen', 'name' => 'voluntarily_exited'],            
+            'active' => [
+                'description' => 'Konto ist aktiv und kann verwendet werden', 
+                'name' => 'Aktiv'
+            ],
+            'pending' => [
+                'description' => 'Konto wartet auf Genehmigung', 
+                'name' => 'Ausstehend'
+            ],
+            'inactive' => [
+                'description' => 'Konto ist inaktiv und kann nicht verwendet werden',
+                'name' => 'Inaktiv'
+            ],
+            'rejected' => [
+                'description' => 'Einladung wurde vom Empfänger abgelehnt',
+                'name' => 'Abgelehnt'
+            ],            
+            'deleted' => [
+                'description' => 'Das Benutzerkonto wurde gelöscht oder gesperrt.',
+                'name' => 'Gelöscht'
+            ],
         ];
 
         foreach ($statuses as $statusName => $data) {

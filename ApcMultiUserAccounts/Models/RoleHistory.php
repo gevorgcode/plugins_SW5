@@ -37,6 +37,11 @@ class RoleHistory
      */
     private $currentRoleId;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $details;
+
     // Getters and setters
     public function getId() { return $this->id; }
 
@@ -51,4 +56,7 @@ class RoleHistory
 
     public function getCurrentRoleId() { return $this->currentRoleId; }
     public function setCurrentRoleId($currentRoleId) { $this->currentRoleId = $currentRoleId; }
+
+    public function getDetails() { return $this->details; }
+    public function setDetails($details) { $this->details = $details; }
 }

@@ -9,6 +9,8 @@ class Shopware_Controllers_Frontend_MultiUserInvite extends Enlight_Controller_A
     private     $userService;
     private     $db;
     private     $statuses;
+    private     $session;
+    private     $admin;
 
      /**
      * Init controller method
@@ -17,6 +19,8 @@ class Shopware_Controllers_Frontend_MultiUserInvite extends Enlight_Controller_A
         /** @var \ApcMultiUserAccounts\Services\UserService $userService */
         $this->userService      = $this->container->get('apc_multiuser_user_service');
         $this->db               = Shopware()->Db();
+        $this->session          = Shopware()->Session();
+        $this->admin            = Shopware()->Modules()->Admin();
 
         //use like this $this->statuses['pending']['id']
         $multiuserStatuses = $this->db->fetchAll('SELECT * FROM `multiuser_statuses`');
@@ -31,33 +35,33 @@ class Shopware_Controllers_Frontend_MultiUserInvite extends Enlight_Controller_A
     }
 
     //logic action to activate from email link
-    public function activateAction () {
+    public function activateAction () {        
         
         $params = $this->clearParams($this->Request()->getParams());
+
         //get user from multiuser_user by token
-        $user = $this->userService->findByToken($params['token']);
+        $token = $params['token'] ?? '';
+        $user = $this->userService->findByToken($token);
 
         //check if all params is correct
-        if ($user && $user->getEmail() == $params['email'] && $user->getStatusId() == $this->statuses['pending']['id'] && !$this->db->fetchOne('SELECT `id` FROM `s_user` WHERE `email` = :email', ['email' => $params['email']])) {       
+        if ($user && $user->getEmail() == $params['email'] && $user->getStatusId() == $this->statuses['pending']['id'] && !$this->db->fetchOne('SELECT `id` FROM `s_user` WHERE `email` = :email', ['email' => $params['email']])) {   
             
+            // //logout navsyaki
+            if ($this->session->OffsetGet('sUserId')) {
+                $this->admin->logout(); 
+                echo '<script>location.reload();</script>';
+            }                       
 
-            
+            $this->session->offsetSet('multiuser_em', $params['email']);
+            $this->session->offsetSet('multiuser_tok', $token);
 
-
-
+            $this->View()->assign('country_list', Shopware()->Modules()->Admin()->sGetCountryList());
             $this->View()->Assign('multiUserInfo', $user);
-            return;
 
-            /**
-             * TODO
-             *              sessionum pahel email u token
-             *              save -ic araj subscriberum stugel u mi ban anel
-             *              get all country list
-             * 1. stugel ete user chka cuyc tal es actioni tpl vortex klracni bolor partadir dashter@ logini parz teska@ usave
-             * 2. hajox save @lneluc heto poxel status@ active, avelacnel userid multi user usersum, iran redirect anel logini ej
-             * 3. logerum avelacnel acepti log, status changed log
-             * 4. masterin mail uxarkel vor acept a arel, 
-             */
+            if ($params['redirectParams']) {
+                $this->View()->Assign('multiUserInfoParams', $params);
+            }
+            return;            
         }
 
         //redirects to error page if incorrect params
@@ -66,8 +70,7 @@ class Shopware_Controllers_Frontend_MultiUserInvite extends Enlight_Controller_A
             'action' => 'index',
         ]);
         return;      
-    } 
-
+    }
 
     //logic action to activate from email link
     public function rejectAction () {
@@ -78,11 +81,11 @@ class Shopware_Controllers_Frontend_MultiUserInvite extends Enlight_Controller_A
         $user = $this->userService->findByToken($params['token']);
 
         //check if all params is correct
-        if ($user && $user->getEmail() == $params['email'] && ($user->getStatusId() == $this->statuses['pending']['id'] || $this->statuses['rejected']['id'])) {            
+        if ($user && $user->getEmail() == $params['email'] && ($user->getStatusId() == $this->statuses['pending']['id'] || $user->getStatusId() == $this->statuses['rejected']['id'])) {            
             if ($user->getStatusId() == $this->statuses['pending']['id']) {
                 $user->setStatusId($this->statuses['rejected']['id']);
                 $this->userService->update($user);
-                $this->userService->createStatusHistory($previeousStatusId = $this->statuses['pending']['id'], $user->getStatusId(), $user->getId());
+                $this->userService->createStatusHistory($previeousStatusId = $this->statuses['pending']['id'], $user->getStatusId(), $user->getId(), $changedBy = 'Benutzer', $comment = 'der Benutzer selbst die Einladung abgelehnt hat');
             }
             return;
         }

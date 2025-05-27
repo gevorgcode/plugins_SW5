@@ -172,12 +172,13 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
             $account = $this->createMasterAccount($userData["billingaddress"]['company']);
         }
 
-        $this->createUserReccord($params['email'], $account->getId(),$role['id'], $token);
+        $multiuserId = $this->createUserReccord($params['email'], $account->getId(),$role['id'], $token);
 
         $mail = Shopware()->TemplateMail()->createMail(Constants::EMAIL_TEMPLATE_MULTIUSER_INVITE, $context);
         $mail->addTo($params['email']);
         try {
             $mail->send();
+            $this->userService->createLog($multiuserId, $action = 'Einladung gesendet', $comment = 'Einladung erfolgreich gesendet');
             $this->redirect([
                 'controller' => 'MultiUsers',
                 'action' => 'index',
@@ -325,11 +326,17 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
                     //check if ststus changes add log, if role changes add log
                     if ($newStatusId != $oldStatusId) {
                         //call user history
-                        $this->userService->createStatusHistory($oldStatusId, $newStatusId, $userToEdit->getId());
+                        $this->userService->createStatusHistory($oldStatusId, $newStatusId, $userToEdit->getId(), $changedBy = 'Admin', $comment = '');
+                        if ($params['status'] == 'deleted' || $params['status'] == 'inactive') {
+                            $this->db->query('UPDATE `s_user` SET `active` = 0 WHERE `id` = :userID', ['userID' => $userToEdit->getUserId()]);
+                        }
+                        if ($params['status'] == 'active' && $oldStatusId == $statusIds['inactive']) {
+                            $this->db->query('UPDATE `s_user` SET `active` = 1 WHERE `id` = :userID', ['userID' => $userToEdit->getUserId()]);
+                        }
                     }
                     if ($newRoleId != $oldRoleId && $newRoleId != null) {
                         //call role history
-                        $this->userService->createRoleHistory($oldRoleId, $newRoleId, $userToEdit->getId());
+                        $this->userService->createRoleHistory($oldRoleId, $newRoleId, $userToEdit->getId(), $comment = 'Der Administrator hat die Benutzerrolle geändert');
                     }
                     
                     //forward to indexAction, with params success (role , status) true
@@ -340,7 +347,7 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
                     ]);
                     return;
                 }else{
-                    //if nothing changes , return to ame page
+                    //if nothing changes , return to same page
                     $this->redirect([
                         'controller' => 'MultiUsers',
                         'action' => 'index',
@@ -415,6 +422,7 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
                 $mail->addTo($userToResend->getEmail());
                 try {
                     $mail->send();
+                    $this->userService->createLog($userToResend->getId(), $action = 'Erneute Einladung gesendet', $comment = 'Erneute Einladung erfolgreich gesendet');
                     $this->redirect([
                         'controller' => 'MultiUsers',
                         'action' => 'index',
@@ -481,6 +489,8 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
                         'date' => $statusHistoryItem->getChangedAt()->format('Y-m-d H:i:s'),
                         'previous' => $previousStatusName,
                         'current' => $currentStatusName,
+                        'changedBy' => $statusHistoryItem->getChangedby(),
+                        'comment' => $statusHistoryItem->getDetails(),
                     ];
                 }
                 
@@ -506,6 +516,7 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
                         'date' => $roleHistoryItem->getChangedAt()->format('Y-m-d H:i:s'),
                         'previous' => $previousRoleName,
                         'current' => $currentRoleName,
+                        'comment' => $roleHistoryItem->getDetails(),
                     ];
                 }
 
@@ -568,13 +579,14 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
     }
 
     private function checkMultiuserShow () {
-        $isCompanyAndActive = $this->db->fetchRow(
-            'SELECT sa.company AS company, su.active
-            FROM s_user_addresses sa
-            JOIN s_user su ON sa.user_id = su.id
-            WHERE sa.user_id = :userId',
-            ['userId' => $this->userId]
-        );
+        $isCompanyAndActive = $this->db->fetchOne(
+                'SELECT sa.company AS company
+                FROM s_user_addresses sa
+                JOIN s_user su ON sa.user_id = su.id
+                WHERE sa.user_id = :userId
+                AND su.active = 1',
+                ['userId' => $this->userId]
+            );  
 
         if (!$isCompanyAndActive) {
             return false;
@@ -585,8 +597,8 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
 
         if ($account) {            
             //update company name if it changed
-            if ($account->getCompanyName() != $isCompanyAndActive['company']) {
-                $account->setCompanyName($isCompanyAndActive['company']);
+            if ($account->getCompanyName() != $isCompanyAndActive) {
+                $account->setCompanyName($isCompanyAndActive);
                 $this->accountService->update($account);
             }
             return $account;
@@ -619,7 +631,7 @@ class Shopware_Controllers_Frontend_MultiUsers extends Enlight_Controller_Action
         $user->setToken($token);
 
         $this->userService->create($user);
-        return true;
+        return $user->getId();
     }
 
     private function clearParams($params = []) {

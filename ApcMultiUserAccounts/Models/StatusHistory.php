@@ -37,6 +37,16 @@ class StatusHistory
      */
     private $currentStatusId;
 
+    /**
+     * @ORM\Column(name="changed_by", type="text", nullable=true)
+     */
+    private $changedBy;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $details;
+
     // Getters and setters
     public function getId() { return $this->id; }
 
@@ -51,4 +61,10 @@ class StatusHistory
 
     public function getCurrentStatusId() { return $this->currentStatusId; }
     public function setCurrentStatusId($currentStatusId) { $this->currentStatusId = $currentStatusId; }
+
+    public function getChangedBy() { return $this->changedBy; }
+    public function setChangedBy($changedBy) { $this->changedBy = $changedBy; }
+
+    public function getDetails() { return $this->details; }
+    public function setDetails($details) { $this->details = $details; }
 }

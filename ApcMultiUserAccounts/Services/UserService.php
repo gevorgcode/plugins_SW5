@@ -35,6 +35,13 @@ class UserService
             ->findBy(['accountId' => $accountId]);
     }
 
+    public function findAllByEmail(string $email): array
+    {
+        return $this->em
+            ->getRepository(User::class)
+            ->findBy(['email' => $email]);
+    }
+
     public function findByToken(string $token): ?User
     {
         return $this->em
@@ -59,27 +66,42 @@ class UserService
         return $this->em->getRepository(User::class)->findAll();
     }
 
-    public function createStatusHistory(int $previousStatusId, int $currentStatusId, int $multiuserId): void
+    public function createStatusHistory(int $previousStatusId, int $currentStatusId, int $multiuserId, string $changedBy = '', string $comment = ''): void
     {
         $statusHistory = new StatusHistory();
         $statusHistory->setMultiuserId($multiuserId);
         $statusHistory->setPreviousStatusId($previousStatusId);
-        $statusHistory->setCurrentStatusId($currentStatusId);
+        $statusHistory->setCurrentStatusId($currentStatusId);        
+        $statusHistory->setChangedBy($changedBy);
+        $statusHistory->setDetails($comment);
         $statusHistory->setChangedAt(new \DateTime());
 
         $this->em->persist($statusHistory);
         $this->em->flush();
     }
 
-    public function createRoleHistory(int $previousRoleId, int $currentRoleId, int $multiuserId): void
+    public function createRoleHistory(int $previousRoleId, int $currentRoleId, int $multiuserId, string $comment = ''): void
     {
         $roleHistory = new RoleHistory();
         $roleHistory->setMultiuserId($multiuserId);
         $roleHistory->setPreviousRoleId($previousRoleId);
         $roleHistory->setCurrentRoleId($currentRoleId);
+        $roleHistory->setDetails($comment);
         $roleHistory->setChangedAt(new \DateTime());
 
         $this->em->persist($roleHistory);
+        $this->em->flush();
+    }
+
+    public function createLog($multiuserId, $action, $comment): void
+    {
+        $logHistory = new Log();
+        $logHistory->setMultiuserId($multiuserId);
+        $logHistory->setAction($action);
+        $logHistory->getTimestamp(new \DateTime());
+        $logHistory->setDetails($comment);
+
+        $this->em->persist($logHistory);
         $this->em->flush();
     }
 

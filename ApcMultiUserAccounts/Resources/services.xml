@@ -7,6 +7,10 @@
             <argument>%apc_multi_user_accounts.plugin_dir%</argument>
             <tag name="shopware.event_subscriber"/>
         </service>
+        <service id="apc_multi_user_accounts.subscriber.subscriber" class="ApcMultiUserAccounts\Subscriber\MultiuserSubscriber">
+            <argument>%apc_multi_user_accounts.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
 
         <service id="apc_multiuser_account_service" class="ApcMultiUserAccounts\Services\AccountService" public="true">
             <argument type="service" id="models" />

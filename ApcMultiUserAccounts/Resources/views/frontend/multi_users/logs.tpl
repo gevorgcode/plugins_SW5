@@ -64,6 +64,8 @@
                             <tr>                                   
                                 <th class="role-description-table__head">Vorheriger Status</th>
                                 <th class="role-description-table__head">Neuer Status</th>
+                                <th class="role-description-table__head">Geändert von</th>
+                                <th class="role-description-table__head">Kommentar</th>
                                 <th class="role-description-table__head">Datum</th>
                             </tr>
                         </thead>
@@ -72,6 +74,8 @@
                                 <tr>
                                     <td class="role-description-table__cell">{$statusHistoryItem.previous}</td>
                                     <td class="role-description-table__cell">{$statusHistoryItem.current}</td>
+                                    <td class="role-description-table__cell">{$statusHistoryItem.changedBy}</td>
+                                    <td class="role-description-table__cell">{$statusHistoryItem.comment}</td>
                                     <td class="role-description-table__cell">{$statusHistoryItem.date}</td>
                                 </tr>
                             {/foreach}                                                      
@@ -97,6 +101,7 @@
                             <tr>                                   
                                 <th class="role-description-table__head">Vorherige Rolle</th>
                                 <th class="role-description-table__head">Neue Rolle</th>
+                                <th class="role-description-table__head">Kommentar</th>
                                 <th class="role-description-table__head">Datum</th>
                             </tr>
                         </thead>
@@ -105,6 +110,7 @@
                                 <tr>
                                     <td class="role-description-table__cell">{$roleHistoryItem.previous}</td>
                                     <td class="role-description-table__cell">{$roleHistoryItem.current}</td>
+                                    <td class="role-description-table__cell">{$roleHistoryItem.comment}</td>
                                     <td class="role-description-table__cell">{$roleHistoryItem.date}</td>
                                 </tr>
                             {/foreach}                                                      

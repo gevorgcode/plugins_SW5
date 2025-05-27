@@ -74,7 +74,7 @@
                     {if $multiUserInfo.users}
                         <div class="forms--title">Mitarbeiterliste</div>
                         {if $params.successMessage2}
-                            <div class="multiuser--accounts--email--error alert is--success is--rounded"> 
+                            <div class="multiuser--accounts--email--error alert is--success is--rounded" id="multiuser--message--top"> 
                                 <div class="alert--icon"> 
                                     <i class="icon--element icon--check"></i> 
                                 </div>
@@ -84,7 +84,7 @@
                             </div>      
                         {/if}
                         {if $params.errorMessage2}
-                            <div class="multiuser--accounts--email--error alert is--info is--rounded"> 
+                            <div class="multiuser--accounts--email--error alert is--info is--rounded" id="multiuser--message--top"> 
                                 <div class="alert--icon"> 
                                     <i class="icon--element icon--info"></i> 
                                 </div>
@@ -152,7 +152,7 @@
                     <div class="forms--text">
                         <p class="callback--tragen">Laden Sie einen Mitarbeiter zu Ihrem Firmenkonto ein. Geben Sie die E-Mail-Adresse ein und weisen Sie eine Rolle zu.</p> 
                         {if $params.erroremail}
-                            <div class="multiuser--accounts--email--error alert is--error is--rounded"> 
+                            <div class="multiuser--accounts--email--error alert is--error is--rounded" id="multiuser--message--top"> 
                                 <div class="alert--icon"> 
                                     <i class="icon--element icon--cross"></i> 
                                 </div>
@@ -162,7 +162,7 @@
                             </div>      
                         {/if}
                         {if $params.successMessage}
-                            <div class="multiuser--accounts--email--error alert is--success is--rounded"> 
+                            <div class="multiuser--accounts--email--error alert is--success is--rounded" id="multiuser--message--top"> 
                                 <div class="alert--icon"> 
                                     <i class="icon--element icon--check"></i> 
                                 </div>
